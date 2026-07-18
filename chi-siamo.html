@@ -67,7 +67,7 @@
   </header>
 
   <!-- CHI SIAMO -->
-  <section id="chi-siamo" class="relative pt-40 pb-24 bg-white bg-contain bg-no-repeat" style="background-image: url('images/team-banner.jpg'); background-position: center 65%;">
+  <section id="chi-siamo" class="relative pt-40 pb-10 bg-white bg-contain bg-no-repeat" style="background-image: url('images/team-banner.jpg'); background-position: center 65%;">
     <div class="mx-auto max-w-3xl px-6">
       <div class="reveal bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-14 shadow-lg">
         <p class="text-viola tracking-[0.25em] uppercase text-xs font-semibold mb-4">Chi siamo</p>
@@ -85,7 +85,7 @@
   </section>
 
   <!-- TEAM -->
-  <section id="team" class="relative py-24">
+  <section id="team" class="relative pt-10 pb-24">
     <div class="mx-auto max-w-6xl px-6">
       <div class="max-w-xl mb-6 reveal">
         <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Il team</p>
@@ -124,6 +124,33 @@
           </div>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- DOMANDE / CONTATTO -->
+  <section id="domande" class="relative py-24 bg-viola-pale">
+    <div class="mx-auto max-w-2xl px-6 text-center reveal">
+      <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Contattaci</p>
+      <h2 class="font-display text-4xl font-semibold">Vuoi sapere qualcosa in più?</h2>
+      <p class="mt-4 text-ink-soft">
+        Siamo qui per rispondere a qualsiasi domanda tu abbia su chi siamo, cosa facciamo e come lo facciamo. Non esitare, facci sapere i tuoi dubbi!
+      </p>
+
+      <form id="infoForm" class="mt-9 grid sm:grid-cols-2 gap-4 text-left">
+        <input type="text" name="nome" required placeholder="Nome"
+               class="rounded-xl bg-white border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+        <input type="text" name="cognome" required placeholder="Cognome"
+               class="rounded-xl bg-white border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+        <input type="email" name="email" required placeholder="Email"
+               class="sm:col-span-2 rounded-xl bg-white border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+        <textarea name="messaggio" required rows="5" placeholder="Scrivi il tuo messaggio"
+               class="sm:col-span-2 rounded-xl bg-white border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors resize-y"></textarea>
+        <button type="submit"
+                class="sm:col-span-2 rounded-xl bg-corallo px-7 py-3.5 font-medium text-white hover:bg-corallo-light transition-colors">
+          Invia
+        </button>
+      </form>
+      <p id="infoMsg" class="hidden mt-5 text-corallo font-medium">Grazie! La tua richiesta è stata inviata. Ti risponderemo al più presto.</p>
     </div>
   </section>
 
@@ -168,6 +195,29 @@
     mobileMenu.querySelectorAll('a').forEach(a =>
       a.addEventListener('click', () => mobileMenu.classList.add('hidden'))
     );
+
+    // Form domande: invia a Formspree senza lasciare la pagina
+    document.getElementById('infoForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Invio in corso...';
+      try {
+        const res = await fetch('https://formspree.io/f/xqerqqkd', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!res.ok) throw new Error();
+        form.classList.add('hidden');
+        document.getElementById('infoMsg').classList.remove('hidden');
+      } catch {
+        btn.disabled = false;
+        btn.textContent = 'Invia';
+        alert('Ops, qualcosa è andato storto. Scrivici direttamente a stelliumsfl@gmail.com');
+      }
+    });
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
