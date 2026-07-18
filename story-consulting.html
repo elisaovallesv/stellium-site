@@ -56,7 +56,7 @@
       <div class="hidden md:flex items-center gap-7 text-sm font-medium text-ink-soft">
         <a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a>
         <a href="index.html#servizi" class="hover:text-corallo transition-colors">Servizi</a>
-        <a href="index.html#prenota" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
+        <a href="#prenota" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
       </div>
       <button id="menuBtn" class="md:hidden p-2 text-ink" aria-label="Apri il menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -67,34 +67,35 @@
     <div id="mobileMenu" class="hidden md:hidden border-t border-ink/5 bg-white px-6 py-4 flex flex-col gap-4 text-ink-soft font-medium">
       <a href="chi-siamo.html" class="hover:text-corallo">Chi siamo</a>
       <a href="index.html#servizi" class="hover:text-corallo">Servizi</a>
-      <a href="index.html#prenota" class="hover:text-corallo">Prenota ora</a>
+      <a href="#prenota" class="hover:text-corallo">Prenota ora</a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section id="top" class="relative pt-40 pb-20 text-center">
-    <div class="mx-auto max-w-3xl px-6 reveal">
-      <img src="images/icon-story.svg" alt="" aria-hidden="true" class="w-16 h-16 mx-auto mb-6">
-      <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Servizi</p>
-      <h1 class="font-display text-5xl font-semibold leading-[1.05] mb-6">Story Consulting</h1>
-      <p class="text-lg text-ink-soft leading-relaxed">
-        Una sessione di brainstorming durante la quale discuteremo della tua storia e sgranocchieremo popcorn. Dopo il nostro incontro saprai cosa chiederti e come impostare la struttura della tua storia.
-      </p>
-      <div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium text-ink-soft">
-        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-corallo"></span>Feedback personalizzato in PDF per la tua storia</span>
-        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-corallo"></span>Videocall online della durata che preferisci</span>
-        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-corallo"></span>Canale di comunicazione sempre aperto</span>
-      </div>
-      <div class="mt-9">
-        <a href="index.html#prenota" class="rounded-full bg-corallo px-7 py-3 font-medium text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
+  <section id="top" class="relative pt-40 pb-24 bg-white bg-contain bg-no-repeat" style="background-image: url('images/hero-story-consulting.png'); background-position: center 65%;">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="reveal bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-14 shadow-lg text-center">
+        <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Servizi</p>
+        <h1 class="font-display text-5xl font-semibold leading-[1.05] mb-6">Story Consulting</h1>
+        <p class="text-lg text-ink-soft leading-relaxed">
+          Una sessione di brainstorming durante la quale discuteremo della tua storia e sgranocchieremo popcorn. Dopo il nostro incontro saprai cosa chiederti e come impostare la struttura della tua storia.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium text-ink-soft">
+          <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-rosa"></span>Feedback personalizzato in PDF per la tua storia</span>
+          <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-rosa"></span>Videocall online della durata che preferisci</span>
+          <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-rosa"></span>Canale di comunicazione sempre aperto</span>
+        </div>
+        <div class="mt-9">
+          <a href="#prenota" class="rounded-full bg-corallo px-7 py-3 font-medium text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- DESCRIZIONE -->
-  <section class="relative py-24 bg-viola-pale">
+  <section class="relative py-24 bg-rosa/10">
     <div class="mx-auto max-w-3xl px-6 reveal">
-      <p class="text-viola tracking-[0.25em] uppercase text-xs font-semibold mb-4">Come funziona</p>
+      <p class="text-[#b23e77] tracking-[0.25em] uppercase text-xs font-semibold mb-4">Come funziona</p>
       <h2 class="font-display text-3xl font-semibold leading-tight mb-6">Farsi le domande giuste è fondamentale per scrivere una buona storia.</h2>
       <div class="space-y-5 text-ink-soft leading-relaxed">
         <p>
@@ -110,9 +111,12 @@
   <!-- PACCHETTI -->
   <section class="relative py-24">
     <div class="mx-auto max-w-6xl px-6">
-      <div class="max-w-xl mb-14 reveal">
-        <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Pacchetti</p>
-        <h2 class="font-display text-4xl font-semibold leading-tight">Quanto tempo vuoi passare con noi?</h2>
+      <div class="flex items-center gap-5 max-w-xl mb-14 reveal">
+        <img src="images/icon-story.svg" alt="" aria-hidden="true" class="w-14 h-14 flex-none">
+        <div>
+          <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Pacchetti</p>
+          <h2 class="font-display text-4xl font-semibold leading-tight">Quanto tempo vuoi passare con noi?</h2>
+        </div>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
@@ -125,7 +129,7 @@
           <div class="mt-auto">
             <p class="text-sm text-ink-soft mb-1">1h</p>
             <p class="font-display text-2xl font-semibold mb-4">60 €</p>
-            <a href="index.html#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
+            <a href="#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
               Prenota
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
@@ -141,7 +145,7 @@
           <div class="mt-auto">
             <p class="text-sm text-ink-soft mb-1">2h</p>
             <p class="font-display text-2xl font-semibold mb-4">120 €</p>
-            <a href="index.html#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
+            <a href="#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
               Prenota
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
@@ -157,7 +161,7 @@
           <div class="mt-auto">
             <p class="text-sm text-ink-soft mb-1">3h</p>
             <p class="font-display text-2xl font-semibold mb-4">200 €</p>
-            <a href="index.html#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
+            <a href="#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
               Prenota
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
@@ -168,10 +172,10 @@
   </section>
 
   <!-- COSA PORTERAI CON TE -->
-  <section class="relative py-24 bg-viola-pale">
+  <section class="relative py-24 bg-rosa/10">
     <div class="mx-auto max-w-6xl px-6">
       <div class="max-w-xl mb-14 reveal">
-        <p class="text-viola tracking-[0.25em] uppercase text-xs font-semibold mb-4">Risultati</p>
+        <p class="text-[#b23e77] tracking-[0.25em] uppercase text-xs font-semibold mb-4">Risultati</p>
         <h2 class="font-display text-4xl font-semibold leading-tight">Cosa porterai con te alla fine dell'incontro</h2>
       </div>
 
@@ -294,7 +298,7 @@
         <p class="text-ink font-medium mb-3">Naviga</p>
         <p><a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a></p>
         <p><a href="index.html#servizi" class="hover:text-corallo transition-colors">Servizi</a></p>
-        <p><a href="index.html#prenota" class="hover:text-corallo transition-colors">Prenota ora</a></p>
+        <p><a href="#prenota" class="hover:text-corallo transition-colors">Prenota ora</a></p>
       </div>
     </div>
     <div class="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-ink/5 text-xs text-ink-soft/70">
