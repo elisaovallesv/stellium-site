@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story Consulting — Stellium</title>
+  <meta name="description" content="Story Consulting: una sessione di brainstorming per costruire la struttura narrativa della tua storia, con feedback personalizzato in PDF.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink:     { DEFAULT: '#2B2559', soft: '#57517F' },
+            viola:   { DEFAULT: '#58539F', light: '#8B87C4', pale: '#F1F0F8' },
+            corallo: { DEFAULT: '#EB5B4B', light: '#F0796B', pale: '#FDEEEC' },
+            rosa:    { DEFAULT: '#e889b7' },
+            giallo:  { DEFAULT: '#f1b709' },
+            blu:     { DEFAULT: '#63adf2' }
+          },
+          fontFamily: {
+            display: ['Fraunces', 'serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    details.faq summary { list-style: none; cursor: pointer; }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform .25s ease; }
+  </style>
+</head>
+<body class="font-body bg-white text-ink antialiased overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/85 border-b border-ink/5">
+    <nav class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+      <a href="index.html#top" class="flex items-center">
+        <img src="images/logo.svg" alt="Stellium" class="h-8 w-auto">
+      </a>
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-ink-soft">
+        <a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a>
+        <a href="index.html#servizi" class="hover:text-corallo transition-colors">Servizi</a>
+        <a href="index.html#prenota" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
+      </div>
+      <button id="menuBtn" class="md:hidden p-2 text-ink" aria-label="Apri il menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-ink/5 bg-white px-6 py-4 flex flex-col gap-4 text-ink-soft font-medium">
+      <a href="chi-siamo.html" class="hover:text-corallo">Chi siamo</a>
+      <a href="index.html#servizi" class="hover:text-corallo">Servizi</a>
+      <a href="index.html#prenota" class="hover:text-corallo">Prenota ora</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative pt-40 pb-20 text-center">
+    <div class="mx-auto max-w-3xl px-6 reveal">
+      <img src="images/icon-story.svg" alt="" aria-hidden="true" class="w-16 h-16 mx-auto mb-6">
+      <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Servizi</p>
+      <h1 class="font-display text-5xl font-semibold leading-[1.05] mb-6">Story Consulting</h1>
+      <p class="text-lg text-ink-soft leading-relaxed">
+        Una sessione di brainstorming durante la quale discuteremo della tua storia e sgranocchieremo popcorn. Dopo il nostro incontro saprai cosa chiederti e come impostare la struttura della tua storia.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium text-ink-soft">
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-corallo"></span>Feedback personalizzato in PDF per la tua storia</span>
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-corallo"></span>Videocall online della durata che preferisci</span>
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-corallo"></span>Canale di comunicazione sempre aperto</span>
+      </div>
+      <div class="mt-9">
+        <a href="index.html#prenota" class="rounded-full bg-corallo px-7 py-3 font-medium text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIZIONE -->
+  <section class="relative py-24 bg-viola-pale">
+    <div class="mx-auto max-w-3xl px-6 reveal">
+      <p class="text-viola tracking-[0.25em] uppercase text-xs font-semibold mb-4">Come funziona</p>
+      <h2 class="font-display text-3xl font-semibold leading-tight mb-6">Farsi le domande giuste è fondamentale per scrivere una buona storia.</h2>
+      <div class="space-y-5 text-ink-soft leading-relaxed">
+        <p>
+          Quando si inizia a scrivere, che sia per la carta, il cinema, il teatro o qualsiasi altro mezzo, avere tante domande è più importante che avere tante risposte. Qual è il mondo in cui si svolge la mia storia? Chi è il mio personaggio? Quali sono le sue paure, le sue capacità, i suoi sogni? Chiederci questo e tanto altro ci aiuterà a porre delle basi solide per il nostro progetto.
+        </p>
+        <p>
+          Durante la videochiamata, affronteremo insieme un brainstorming che ti sarà utile a rispondere in maniera corretta a queste domande per iniziare a delineare l'arco narrativo e le motivazioni dei tuoi personaggi. Scoprendo man mano nuovi dettagli riguardo alla tua idea, ti aiuteremo a renderla ben strutturata, oltre che conforme ai tuoi gusti e alle tue intenzioni.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACCHETTI -->
+  <section class="relative py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="max-w-xl mb-14 reveal">
+        <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Pacchetti</p>
+        <h2 class="font-display text-4xl font-semibold leading-tight">Quanto tempo vuoi passare con noi?</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="reveal group rounded-3xl bg-white border border-ink/10 p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-viola/10 transition-all duration-300">
+          <p class="text-viola tracking-[0.2em] uppercase text-xs font-semibold mb-2">Story Consulting</p>
+          <h3 class="font-display text-2xl font-semibold mb-3">Base</h3>
+          <p class="text-ink-soft leading-relaxed mb-6">
+            Parleremo di tutta la tua idea ma potremo approfondire un singolo aspetto, come personaggi, tematiche o trama.
+          </p>
+          <div class="mt-auto">
+            <p class="text-sm text-ink-soft mb-1">1h</p>
+            <p class="font-display text-2xl font-semibold mb-4">60 €</p>
+            <a href="index.html#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
+              Prenota
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="reveal group rounded-3xl bg-white border border-ink/10 p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-corallo/10 transition-all duration-300">
+          <p class="text-viola tracking-[0.2em] uppercase text-xs font-semibold mb-2">Story Consulting</p>
+          <h3 class="font-display text-2xl font-semibold mb-3">Avanzato</h3>
+          <p class="text-ink-soft leading-relaxed mb-6">
+            Parleremo della tua idea, approfondendo due elementi della storia, come personaggi, tematiche e trama.
+          </p>
+          <div class="mt-auto">
+            <p class="text-sm text-ink-soft mb-1">2h</p>
+            <p class="font-display text-2xl font-semibold mb-4">120 €</p>
+            <a href="index.html#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
+              Prenota
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="reveal group rounded-3xl bg-white border border-ink/10 p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-viola/10 transition-all duration-300">
+          <p class="text-viola tracking-[0.2em] uppercase text-xs font-semibold mb-2">Story Consulting</p>
+          <h3 class="font-display text-2xl font-semibold mb-3">Pro</h3>
+          <p class="text-ink-soft leading-relaxed mb-6">
+            Pensato per definire ogni singolo aspetto della tua storia, come personaggi, tematiche e trama.
+          </p>
+          <div class="mt-auto">
+            <p class="text-sm text-ink-soft mb-1">3h</p>
+            <p class="font-display text-2xl font-semibold mb-4">200 €</p>
+            <a href="index.html#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
+              Prenota
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COSA PORTERAI CON TE -->
+  <section class="relative py-24 bg-viola-pale">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="max-w-xl mb-14 reveal">
+        <p class="text-viola tracking-[0.25em] uppercase text-xs font-semibold mb-4">Risultati</p>
+        <h2 class="font-display text-4xl font-semibold leading-tight">Cosa porterai con te alla fine dell'incontro</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="reveal rounded-3xl bg-white p-7">
+          <h3 class="font-display text-xl font-semibold mb-3">Domande chiave</h3>
+          <p class="text-ink-soft leading-relaxed text-sm">
+            Focalizzarsi sui giusti interrogativi ti permetterà di stabilire una base solida per la storia e di delinearne chiaramente i punti cardine.
+          </p>
+        </article>
+        <article class="reveal rounded-3xl bg-white p-7">
+          <h3 class="font-display text-xl font-semibold mb-3">Struttura narrativa</h3>
+          <p class="text-ink-soft leading-relaxed text-sm">
+            Studio dei personaggi, per trovare la loro evoluzione nel corso della storia. Esplorare le loro paure, desideri e punti di forza per renderli più veri.
+          </p>
+        </article>
+        <article class="reveal rounded-3xl bg-white p-7">
+          <h3 class="font-display text-xl font-semibold mb-3">Archi dei personaggi</h3>
+          <p class="text-ink-soft leading-relaxed text-sm">
+            Analizzare il ritmo, i punti della trama e imparare a gestire il flusso narrativo, ti aiuterà a far sì che la progressione risulti ben strutturata e coinvolgente.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRENOTA / CONTATTO -->
+  <section id="prenota" class="relative py-24">
+    <div class="mx-auto max-w-2xl px-6 text-center reveal">
+      <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Prenota</p>
+      <h2 class="font-display text-4xl font-semibold">Prenota ora la tua sessione!</h2>
+      <p class="mt-4 text-ink-soft">
+        Inviaci una mail con tutti i dettagli e noi ti risponderemo al più presto per organizzare insieme la tua sessione.
+      </p>
+
+      <form id="bookingForm" class="mt-9 grid sm:grid-cols-2 gap-4 text-left">
+        <input type="text" name="nome" required placeholder="Nome"
+               class="rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+        <input type="text" name="cognome" required placeholder="Cognome"
+               class="rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+        <input type="email" name="email" required placeholder="Email"
+               class="sm:col-span-2 rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+        <input type="hidden" name="servizio" value="Story Consulting">
+        <textarea name="messaggio" required rows="5" placeholder="Scrivici il tuo messaggio: raccontaci a che punto sei e di cosa hai bisogno"
+               class="sm:col-span-2 rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors resize-y"></textarea>
+        <button type="submit"
+                class="sm:col-span-2 rounded-xl bg-corallo px-7 py-3.5 font-medium text-white hover:bg-corallo-light transition-colors">
+          Invia la richiesta
+        </button>
+      </form>
+      <p id="bookingMsg" class="hidden mt-5 text-corallo font-medium">Grazie! La tua richiesta è stata inviata. Ti risponderemo al più presto per organizzare insieme la tua sessione.</p>
+
+      <!-- FAQ -->
+      <div class="mt-16 space-y-4 text-left">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
+          <summary class="flex items-center justify-between gap-4 font-medium">
+            Come funziona il servizio di Story Consulting?
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+            Durante una videochiamata, esploreremo insieme la tua idea di storia. Ti aiuteremo a rispondere alle domande giuste per costruire una struttura narrativa solida e coerente. Alla fine dell'incontro, riceverai un feedback personalizzato in PDF per approfondire i punti chiave.
+          </p>
+        </details>
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
+          <summary class="flex items-center justify-between gap-4 font-medium">
+            Cosa include il feedback personalizzato?
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+            Il documento di feedback contiene le nostre impressioni riguardo alla tua storia, un'analisi dettagliata dei punti di forza e delle parti che necessitano ancora lavoro. Sarà un modo per tenere a mente, in modo ordinato, tutti i consigli che ti forniremo durante la chiamata.
+          </p>
+        </details>
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
+          <summary class="flex items-center justify-between gap-4 font-medium">
+            Posso scegliere su cosa focalizzarci durante la sessione?
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+            Sì! Che si tratti di approfondire i personaggi, le tematiche o la trama, possiamo adattare la consulenza alle tue esigenze. Ricorda, però, che se ti consigliamo di concentrarti prima su un aspetto specifico della storia, è perché riteniamo che sia fondamentale per valorizzare al meglio il tuo progetto.
+          </p>
+        </details>
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
+          <summary class="flex items-center justify-between gap-4 font-medium">
+            Non ho ancora un'idea chiara, posso comunque prenotare una consulenza?
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+            Certamente! Anche se sei in fase embrionale, possiamo comunque aiutarti a sviluppare un'idea partendo da zero, esplorando le possibilità narrative e gettando le basi per una buona storia.
+          </p>
+        </details>
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
+          <summary class="flex items-center justify-between gap-4 font-medium">
+            È possibile spostare o cancellare una sessione?
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+            Sì, puoi contattarci per spostare o cancellare una sessione di Story Consulting. Per garantire una gestione ottimale del nostro tempo e del tuo, ti chiediamo di darci un preavviso di almeno 48 ore. Se la comunicazione di spostamento o cancellazione avviene con meno di 48 ore di anticipo, la sessione sarà comunque considerata effettuata e dovrà essere saldata.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTATTI -->
+  <footer id="contatti" class="border-t border-ink/5 py-14">
+    <div class="mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-10">
+      <div>
+        <a href="index.html#top" class="inline-block mb-4">
+          <img src="images/logo.svg" alt="Stellium" class="h-7 w-auto">
+        </a>
+        <p class="text-sm text-ink-soft leading-relaxed">Consulenze per le tue storie.<br>Illumina la tua storia.</p>
+      </div>
+      <div class="text-sm text-ink-soft space-y-2">
+        <p class="text-ink font-medium mb-3">Contatti</p>
+        <p>Corso Benedetto Croce, 46<br>70125 Bari (BA)</p>
+        <p>P.IVA 09035550723</p>
+        <p><a href="mailto:stelliumsfl@gmail.com" class="hover:text-corallo transition-colors">stelliumsfl@gmail.com</a></p>
+      </div>
+      <div class="text-sm text-ink-soft space-y-2">
+        <p class="text-ink font-medium mb-3">Naviga</p>
+        <p><a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a></p>
+        <p><a href="index.html#servizi" class="hover:text-corallo transition-colors">Servizi</a></p>
+        <p><a href="index.html#prenota" class="hover:text-corallo transition-colors">Prenota ora</a></p>
+      </div>
+    </div>
+    <div class="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-ink/5 text-xs text-ink-soft/70">
+      © <span id="year"></span> Stellium Agency. Tutti i diritti riservati.
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+    );
+
+    // Form prenotazione: invia a Formspree senza lasciare la pagina
+    document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Invio in corso...';
+      try {
+        const res = await fetch('https://formspree.io/f/xqerqqkd', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!res.ok) throw new Error();
+        form.classList.add('hidden');
+        document.getElementById('bookingMsg').classList.remove('hidden');
+      } catch {
+        btn.disabled = false;
+        btn.textContent = 'Invia la richiesta';
+        alert('Ops, qualcosa è andato storto. Scrivici direttamente a stelliumsfl@gmail.com');
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

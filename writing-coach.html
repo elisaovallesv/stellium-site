@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Coach — Stellium</title>
+  <meta name="description" content="Writing Coach: un alleato al tuo fianco durante la scrittura, per guidare la tua storia nella giusta direzione, con feedback personalizzato in PDF.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink:     { DEFAULT: '#2B2559', soft: '#57517F' },
+            viola:   { DEFAULT: '#58539F', light: '#8B87C4', pale: '#F1F0F8' },
+            corallo: { DEFAULT: '#EB5B4B', light: '#F0796B', pale: '#FDEEEC' },
+            rosa:    { DEFAULT: '#e889b7' },
+            giallo:  { DEFAULT: '#f1b709' },
+            blu:     { DEFAULT: '#63adf2' }
+          },
+          fontFamily: {
+            display: ['Fraunces', 'serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    details.faq summary { list-style: none; cursor: pointer; }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform .25s ease; }
+  </style>
+</head>
+<body class="font-body bg-white text-ink antialiased overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/85 border-b border-ink/5">
+    <nav class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+      <a href="index.html#top" class="flex items-center">
+        <img src="images/logo.svg" alt="Stellium" class="h-8 w-auto">
+      </a>
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-ink-soft">
+        <a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a>
+        <a href="index.html#servizi" class="hover:text-corallo transition-colors">Servizi</a>
+        <a href="index.html#prenota" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
+      </div>
+      <button id="menuBtn" class="md:hidden p-2 text-ink" aria-label="Apri il menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-ink/5 bg-white px-6 py-4 flex flex-col gap-4 text-ink-soft font-medium">
+      <a href="chi-siamo.html" class="hover:text-corallo">Chi siamo</a>
+      <a href="index.html#servizi" class="hover:text-corallo">Servizi</a>
+      <a href="index.html#prenota" class="hover:text-corallo">Prenota ora</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative pt-40 pb-20 text-center">
+    <div class="mx-auto max-w-3xl px-6 reveal">
+      <img src="images/icon-coach.svg" alt="" aria-hidden="true" class="w-16 h-16 mx-auto mb-6">
+      <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Servizi</p>
+      <h1 class="font-display text-5xl font-semibold leading-[1.05] mb-6">Writing Coach</h1>
+      <p class="text-lg text-ink-soft leading-relaxed">
+        Un incontro durante il quale aggiusteremo il tiro della tua storia, guidandola verso la giusta direzione. Dopo la riunione avrai le idee chiare e un piano concreto per migliorare la qualità delle tue pagine.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium text-ink-soft">
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-corallo"></span>Feedback personalizzato in PDF per la tua storia</span>
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-corallo"></span>Videocall online della durata che preferisci</span>
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-corallo"></span>Canale di comunicazione sempre aperto</span>
+      </div>
+      <div class="mt-9">
+        <a href="index.html#prenota" class="rounded-full bg-corallo px-7 py-3 font-medium text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIZIONE -->
+  <section class="relative py-24 bg-viola-pale">
+    <div class="mx-auto max-w-3xl px-6 reveal">
+      <p class="text-viola tracking-[0.25em] uppercase text-xs font-semibold mb-4">Come funziona</p>
+      <h2 class="font-display text-3xl font-semibold leading-tight mb-6">Con un alleato al tuo fianco, sarà più facile orientarsi.</h2>
+      <div class="space-y-5 text-ink-soft leading-relaxed">
+        <p>
+          Nel processo di scrittura di una qualsiasi storia, la paura di sbagliare strada è sempre in agguato. Cosa succede se il mio personaggio rifiuta quella chiamata, anziché accettarla? Come posso rimediare se mi accorgo che la trama ha preso una direzione che non riconosco o che risulta debole?
+        </p>
+        <p>
+          Niente panico, ci siamo qui noi. Durante la videochiamata, lavoreremo insieme per chiarire le tue idee e i tuoi obiettivi narrativi. Noi saremo la tua bussola, ti aiuteremo a orientarti e a mantenere sempre la direzione giusta, passo dopo passo. Affronteremo insieme quest'avventura, per far sì che tu non ti smarrisca nel tragitto.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACCHETTI -->
+  <section class="relative py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="max-w-xl mb-14 reveal">
+        <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Pacchetti</p>
+        <h2 class="font-display text-4xl font-semibold leading-tight">Quanto tempo vuoi passare con noi?</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="reveal group rounded-3xl bg-white border border-ink/10 p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-viola/10 transition-all duration-300">
+          <p class="text-viola tracking-[0.2em] uppercase text-xs font-semibold mb-2">Writing Coach</p>
+          <h3 class="font-display text-2xl font-semibold mb-3">Base</h3>
+          <p class="text-ink-soft leading-relaxed mb-6">
+            Ottimo per esaminare un singolo aspetto del tuo progetto, come trama, personaggi o tematiche.
+          </p>
+          <div class="mt-auto">
+            <p class="text-sm text-ink-soft mb-1">1h</p>
+            <p class="font-display text-2xl font-semibold mb-4">60 €</p>
+            <a href="index.html#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
+              Prenota
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="reveal group rounded-3xl bg-white border border-ink/10 p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-corallo/10 transition-all duration-300">
+          <p class="text-viola tracking-[0.2em] uppercase text-xs font-semibold mb-2">Writing Coach</p>
+          <h3 class="font-display text-2xl font-semibold mb-3">Avanzato</h3>
+          <p class="text-ink-soft leading-relaxed mb-6">
+            Ottimo per analizzare due aspetti del tuo manoscritto, come trama, personaggi e tematiche.
+          </p>
+          <div class="mt-auto">
+            <p class="text-sm text-ink-soft mb-1">2h</p>
+            <p class="font-display text-2xl font-semibold mb-4">120 €</p>
+            <a href="index.html#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
+              Prenota
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="reveal group rounded-3xl bg-white border border-ink/10 p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-viola/10 transition-all duration-300">
+          <p class="text-viola tracking-[0.2em] uppercase text-xs font-semibold mb-2">Writing Coach</p>
+          <h3 class="font-display text-2xl font-semibold mb-3">Pro</h3>
+          <p class="text-ink-soft leading-relaxed mb-6">
+            Ottimo per discutere ogni aspetto del tuo manoscritto, come trama, personaggi e tematiche.
+          </p>
+          <div class="mt-auto">
+            <p class="text-sm text-ink-soft mb-1">3h</p>
+            <p class="font-display text-2xl font-semibold mb-4">200 €</p>
+            <a href="index.html#prenota" class="inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
+              Prenota
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERCHE SCEGLIERE -->
+  <section class="relative py-24 bg-viola-pale">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="max-w-xl mb-14 reveal">
+        <p class="text-viola tracking-[0.25em] uppercase text-xs font-semibold mb-4">Vantaggi</p>
+        <h2 class="font-display text-4xl font-semibold leading-tight">Perché scegliere un writing coach</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="reveal rounded-3xl bg-white p-7">
+          <h3 class="font-display text-xl font-semibold mb-3">Restare motivati</h3>
+          <p class="text-ink-soft leading-relaxed text-sm">
+            Il supporto di qualcuno che conosce la tua storia e che ne ha cura può aiutarti a superare momenti di incertezza o di sconforto.
+          </p>
+        </article>
+        <article class="reveal rounded-3xl bg-white p-7">
+          <h3 class="font-display text-xl font-semibold mb-3">Nuove prospettive</h3>
+          <p class="text-ink-soft leading-relaxed text-sm">
+            Con una guida visualizzerai la tua storia da angolazioni diverse, e scoprirai aspetti dei personaggi e della tua creatività di cui ignoravi l'esistenza.
+          </p>
+        </article>
+        <article class="reveal rounded-3xl bg-white p-7">
+          <h3 class="font-display text-xl font-semibold mb-3">Un testo più solido</h3>
+          <p class="text-ink-soft leading-relaxed text-sm">
+            Ti aiuteremo a preparare il testo anche dal punto di vista formale, rendendolo pronto per essere presentato a editori, agenzie letterarie, produzioni, concorsi o self-publishing.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRENOTA / CONTATTO -->
+  <section id="prenota" class="relative py-24">
+    <div class="mx-auto max-w-2xl px-6 text-center reveal">
+      <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Prenota</p>
+      <h2 class="font-display text-4xl font-semibold">Prenota ora la tua sessione!</h2>
+      <p class="mt-4 text-ink-soft">
+        Inviaci una mail con tutti i dettagli e noi ti risponderemo al più presto per organizzare insieme la tua sessione.
+      </p>
+
+      <form id="bookingForm" class="mt-9 grid sm:grid-cols-2 gap-4 text-left">
+        <input type="text" name="nome" required placeholder="Nome"
+               class="rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+        <input type="text" name="cognome" required placeholder="Cognome"
+               class="rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+        <input type="email" name="email" required placeholder="Email"
+               class="sm:col-span-2 rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+        <input type="hidden" name="servizio" value="Writing Coach">
+        <textarea name="messaggio" required rows="5" placeholder="Scrivici il tuo messaggio: raccontaci a che punto sei e di cosa hai bisogno"
+               class="sm:col-span-2 rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors resize-y"></textarea>
+        <button type="submit"
+                class="sm:col-span-2 rounded-xl bg-corallo px-7 py-3.5 font-medium text-white hover:bg-corallo-light transition-colors">
+          Invia la richiesta
+        </button>
+      </form>
+      <p id="bookingMsg" class="hidden mt-5 text-corallo font-medium">Grazie! La tua richiesta è stata inviata. Ti risponderemo al più presto per organizzare insieme la tua sessione.</p>
+
+      <!-- FAQ -->
+      <div class="mt-16 space-y-4 text-left">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
+          <summary class="flex items-center justify-between gap-4 font-medium">
+            Come funziona il servizio di Writing Coach?
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+            Durante una videochiamata, lavoreremo insieme per analizzare e migliorare la tua storia. Ti aiuteremo a definire obiettivi chiari e a individuare le aree su cui concentrarti per rafforzare il tuo manoscritto. Al termine dell'incontro, riceverai un feedback personalizzato in PDF con indicazioni pratiche.
+          </p>
+        </details>
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
+          <summary class="flex items-center justify-between gap-4 font-medium">
+            Cosa include il feedback personalizzato?
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+            Il documento di feedback contiene le nostre impressioni sul tuo manoscritto, un'analisi approfondita dei punti di forza e delle aree che necessitano di miglioramenti. Ti fornirà un piano chiaro e organizzato per applicare i nostri consigli, aiutandoti a orientarti nel lavoro di revisione e scrittura.
+          </p>
+        </details>
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
+          <summary class="flex items-center justify-between gap-4 font-medium">
+            Il Writing Coach mi aiuterà a preparare il manoscritto per la pubblicazione?
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+            Sì, durante le sessioni possiamo concentrarci anche sugli aspetti formali del testo per renderlo pronto da presentare a editori, agenzie letterarie, concorsi, produzioni o per il self-publishing.
+          </p>
+        </details>
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
+          <summary class="flex items-center justify-between gap-4 font-medium">
+            Non ho un manoscritto completo, posso comunque usufruire del servizio?
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+            Certamente! Anzi, partire da un'idea iniziale o da un abbozzo può essere un vantaggio: in questo modo possiamo guidarti passo dopo passo, aiutandoti a costruire la storia con una direzione chiara fin dall'inizio. Lavoreremo insieme per sviluppare ogni aspetto.
+          </p>
+        </details>
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
+          <summary class="flex items-center justify-between gap-4 font-medium">
+            È possibile spostare o cancellare una sessione?
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+            Sì, puoi contattarci per spostare o cancellare la sessione. Per garantire una gestione ottimale del nostro tempo e del tuo, ti chiediamo di darci un preavviso di almeno 48 ore. Se la comunicazione di spostamento o cancellazione avviene con meno di 48 ore di anticipo, la sessione sarà comunque considerata effettuata e dovrà essere saldata.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTATTI -->
+  <footer id="contatti" class="border-t border-ink/5 py-14">
+    <div class="mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-10">
+      <div>
+        <a href="index.html#top" class="inline-block mb-4">
+          <img src="images/logo.svg" alt="Stellium" class="h-7 w-auto">
+        </a>
+        <p class="text-sm text-ink-soft leading-relaxed">Consulenze per le tue storie.<br>Illumina la tua storia.</p>
+      </div>
+      <div class="text-sm text-ink-soft space-y-2">
+        <p class="text-ink font-medium mb-3">Contatti</p>
+        <p>Corso Benedetto Croce, 46<br>70125 Bari (BA)</p>
+        <p>P.IVA 09035550723</p>
+        <p><a href="mailto:stelliumsfl@gmail.com" class="hover:text-corallo transition-colors">stelliumsfl@gmail.com</a></p>
+      </div>
+      <div class="text-sm text-ink-soft space-y-2">
+        <p class="text-ink font-medium mb-3">Naviga</p>
+        <p><a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a></p>
+        <p><a href="index.html#servizi" class="hover:text-corallo transition-colors">Servizi</a></p>
+        <p><a href="index.html#prenota" class="hover:text-corallo transition-colors">Prenota ora</a></p>
+      </div>
+    </div>
+    <div class="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-ink/5 text-xs text-ink-soft/70">
+      © <span id="year"></span> Stellium Agency. Tutti i diritti riservati.
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => mobileMenu.classList.add('hidden'))
+    );
+
+    // Form prenotazione: invia a Formspree senza lasciare la pagina
+    document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Invio in corso...';
+      try {
+        const res = await fetch('https://formspree.io/f/xqerqqkd', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!res.ok) throw new Error();
+        form.classList.add('hidden');
+        document.getElementById('bookingMsg').classList.remove('hidden');
+      } catch {
+        btn.disabled = false;
+        btn.textContent = 'Invia la richiesta';
+        alert('Ops, qualcosa è andato storto. Scrivici direttamente a stelliumsfl@gmail.com');
+      }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
