@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stellium — Consulenze per le tue storie</title>
-  <meta name="description" content="Stellium è un'agenzia di consulenza editoriale a Bari. Story consulting, writing coaching ed editing per autrici e autori. Illumina la tua storia.">
+  <title>Servizi — Stellium</title>
+  <meta name="description" content="I servizi Stellium: Story Consulting, Writing Coach ed Editing per supportare autrici e autori in ogni fase del percorso creativo.">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,12 +39,6 @@
     }
     .reveal.visible { opacity: 1; transform: none; }
 
-    @keyframes drift {
-      0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-10px); }
-    }
-    .drift { animation: drift 7s ease-in-out infinite; }
-
     details.faq summary { list-style: none; cursor: pointer; }
     details.faq summary::-webkit-details-marker { display: none; }
     details.faq[open] .faq-icon { transform: rotate(45deg); }
@@ -56,13 +50,13 @@
   <!-- NAVBAR -->
   <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/85 border-b border-ink/5">
     <nav class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-      <a href="#top" class="flex items-center">
+      <a href="index.html#top" class="flex items-center">
         <img src="images/logo.svg" alt="Stellium" class="h-8 w-auto">
       </a>
       <div class="hidden md:flex items-center gap-7 text-sm font-medium text-ink-soft">
         <a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a>
-        <a href="servizi.html" class="hover:text-corallo transition-colors">Servizi</a>
-        <a href="#prenota" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
+        <a href="servizi.html" class="text-corallo transition-colors">Servizi</a>
+        <a href="#domande" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
       </div>
       <button id="menuBtn" class="md:hidden p-2 text-ink" aria-label="Apri il menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -72,46 +66,43 @@
     </nav>
     <div id="mobileMenu" class="hidden md:hidden border-t border-ink/5 bg-white px-6 py-4 flex flex-col gap-4 text-ink-soft font-medium">
       <a href="chi-siamo.html" class="hover:text-corallo">Chi siamo</a>
-      <a href="servizi.html" class="hover:text-corallo">Servizi</a>
-      <a href="#prenota" class="hover:text-corallo">Prenota ora</a>
+      <a href="servizi.html" class="text-corallo">Servizi</a>
+      <a href="#domande" class="hover:text-corallo">Prenota ora</a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section id="top" class="relative pt-32 pb-0 overflow-hidden">
-    <div class="mx-auto max-w-4xl px-6 text-center">
-      <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-5">Consulenze per le tue storie</p>
-      <h1 class="font-display text-5xl md:text-7xl font-semibold leading-[1.02]">
-        Illumina la tua <span class="text-viola">storia</span>
-      </h1>
-      <p class="mt-6 text-lg text-ink-soft max-w-xl mx-auto leading-relaxed">
-        Siamo appassionati di narrazione. I nostri servizi sono pensati per supportare autrici e autori in ogni fase del loro percorso creativo.
-      </p>
-      <div class="mt-9 flex flex-wrap justify-center gap-4">
-        <a href="#servizi" class="rounded-full bg-corallo px-7 py-3 font-medium text-white hover:bg-corallo-light transition-colors">Scopri i servizi</a>
-        <a href="#prenota" class="rounded-full border-2 border-viola px-7 py-3 font-medium text-viola hover:bg-viola hover:text-white transition-colors">Prenota ora</a>
+  <section id="top" class="relative pt-40 pb-24 bg-white bg-contain bg-no-repeat" style="background-image: url('images/hero-servizi.png'); background-position: center 65%;">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="reveal bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-14 shadow-lg max-w-xl">
+        <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Servizi</p>
+        <h1 class="font-display text-5xl font-semibold leading-[1.05] mb-6">Servizi</h1>
+        <div class="space-y-5 text-ink-soft leading-relaxed">
+          <p>
+            Siamo appassionati di narrazione e crediamo nel potere delle storie. Per questo offriamo dei servizi pensati per supportare autrici e autori in ogni fase del loro percorso creativo.
+          </p>
+          <p>
+            Tra i nostri servizi troverai lo <span class="font-semibold text-ink">Story Consulting</span>, con sessioni dedicate all'esplorazione di idee e allo sviluppo di trama; il <span class="font-semibold text-ink">Writing Coach</span>, un percorso di crescita per migliorare ogni aspetto della tua opera; e il servizio di <span class="font-semibold text-ink">Editing</span>, che fornisce <em>feedback</em> dettagliati per perfezionare il tuo manoscritto. Siamo qui per supportarti nel tuo percorso, offrendoti gli strumenti necessari per valorizzare le tue storie.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="mt-10 drift">
-      <img src="images/hero.png" alt="Illustrazione Stellium: un viaggio nello spazio delle storie" class="w-full max-w-none">
     </div>
   </section>
 
-  <!-- SERVIZI -->
-  <section id="servizi" class="relative py-24 bg-viola-pale">
+  <!-- SCEGLI IL PERCORSO -->
+  <section class="relative py-24 bg-viola-pale">
     <div class="mx-auto max-w-6xl px-6">
       <div class="max-w-xl mb-14 reveal">
-        <p class="text-viola tracking-[0.25em] uppercase text-xs font-semibold mb-4">Servizi</p>
-        <h2 class="font-display text-4xl font-semibold leading-tight">Tre rotte per la tua storia</h2>
-        <p class="mt-4 text-ink-soft">Ovunque tu sia nel percorso di scrittura, c'è una consulenza pensata per accompagnarti al passo successivo. Ogni percorso è costruito su misura, insieme a te.</p>
+        <p class="text-viola tracking-[0.25em] uppercase text-xs font-semibold mb-4">Percorsi</p>
+        <h2 class="font-display text-4xl font-semibold leading-tight">Scegli il tipo di supporto di cui hai bisogno!</h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-viola/10 transition-all duration-300">
+        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-rosa/10 transition-all duration-300">
           <img src="images/icon-story.svg" alt="" aria-hidden="true" class="w-14 h-14 mb-6">
           <h3 class="font-display text-2xl font-semibold mb-3">Story Consulting</h3>
           <p class="text-ink-soft leading-relaxed mb-6">
-            L'opportunità di partecipare a un massiccio brainstorming: sviluppiamo insieme le tue idee, chiariamo i tuoi dubbi e individuiamo la direzione narrativa della tua storia.
+            Hai un'idea vaga della tua storia o hai già scritto una sinossi e desideri esplorare i percorsi narrativi? Lo Story Consulting ti offre l'opportunità di partecipare a un massiccio brainstorming con noi, dove potrai sviluppare idee, chiarire dubbi e individuare la tua strada.
           </p>
           <a href="story-consulting.html" class="mt-auto inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
             Scopri di più
@@ -119,11 +110,11 @@
           </a>
         </article>
 
-        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-corallo/10 transition-all duration-300">
+        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-giallo/10 transition-all duration-300">
           <img src="images/icon-coach.svg" alt="" aria-hidden="true" class="w-14 h-14 mb-6">
           <h3 class="font-display text-2xl font-semibold mb-3">Writing Coach</h3>
           <p class="text-ink-soft leading-relaxed mb-6">
-            Mentre scrivi, lavoriamo al tuo fianco: una guida che ti consiglierà sotto ogni aspetto narrativo, dalla trama agli archi dei personaggi fino allo stile.
+            Hai iniziato a scrivere la tua storia, ma senti la necessità di sapere se la direzione intrapresa è quella giusta? Scegliendo Writing Coach lavorerai a stretto contatto con noi, ricevendo una guida che ti consiglierà sotto ogni aspetto narrativo nella stesura del tuo racconto.
           </p>
           <a href="writing-coach.html" class="mt-auto inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
             Scopri di più
@@ -131,11 +122,11 @@
           </a>
         </article>
 
-        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-viola/10 transition-all duration-300">
+        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-blu/10 transition-all duration-300">
           <img src="images/icon-editing.svg" alt="" aria-hidden="true" class="w-14 h-14 mb-6">
           <h3 class="font-display text-2xl font-semibold mb-3">Editing</h3>
           <p class="text-ink-soft leading-relaxed mb-6">
-            Hai completato la prima stesura? Riceverai feedback dettagliati su trama, sviluppo dei personaggi e stile di scrittura, con correzioni puntuali sul testo.
+            Hai terminato la prima stesura della tua opera e hai bisogno di una revisione del tuo testo? Con il servizio di Editing, potrai ricevere feedback dettagliati su trama, sviluppo dei personaggi e stile di scrittura, attraverso correzioni utili a migliorare la tua storia.
           </p>
           <a href="editing.html" class="mt-auto inline-flex items-center gap-2 text-corallo font-medium group-hover:gap-3 transition-all">
             Scopri di più
@@ -146,45 +137,45 @@
     </div>
   </section>
 
-  <!-- PRENOTA / CONTATTO -->
-  <section id="prenota" class="relative py-24">
+  <!-- DOMANDE / CONTATTO -->
+  <section id="domande" class="relative py-24">
     <div class="mx-auto max-w-2xl px-6 text-center reveal">
-      <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Prenota</p>
-      <h2 class="font-display text-4xl font-semibold">Prenota ora la tua sessione!</h2>
+      <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Contattaci</p>
+      <h2 class="font-display text-4xl font-semibold">Vuoi sapere qualcosa in più?</h2>
       <p class="mt-4 text-ink-soft">
-        Inviaci una mail con tutti i dettagli e noi ti risponderemo al più presto per organizzare insieme la tua sessione.
+        Se hai ancora domande o perplessità su chi siamo, cosa facciamo e come lo facciamo, non esitare a contattarci. Saremo felici di chiarire ogni dubbio!
       </p>
 
-      <form id="bookingForm" class="mt-9 grid sm:grid-cols-2 gap-4 text-left">
+      <form id="infoForm" class="mt-9 grid sm:grid-cols-2 gap-4 text-left">
         <input type="text" name="nome" required placeholder="Nome"
                class="rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
         <input type="text" name="cognome" required placeholder="Cognome"
                class="rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
         <input type="email" name="email" required placeholder="Email"
                class="sm:col-span-2 rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
-        <textarea name="messaggio" required rows="5" placeholder="Scrivi il tuo messaggio: raccontaci a che punto sei e di cosa hai bisogno"
+        <textarea name="messaggio" required rows="5" placeholder="Scrivici il tuo messaggio"
                class="sm:col-span-2 rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors resize-y"></textarea>
         <button type="submit"
                 class="sm:col-span-2 rounded-xl bg-corallo px-7 py-3.5 font-medium text-white hover:bg-corallo-light transition-colors">
-          Invia la richiesta
+          Invia
         </button>
       </form>
-      <p id="bookingMsg" class="hidden mt-5 text-corallo font-medium">Grazie! La tua richiesta è stata inviata. Ti risponderemo al più presto per organizzare insieme la tua sessione.</p>
+      <p id="infoMsg" class="hidden mt-5 text-corallo font-medium">Grazie! La tua richiesta è stata inviata. Ti risponderemo al più presto.</p>
 
       <!-- FAQ -->
       <div class="mt-16 space-y-4 text-left">
         <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
           <summary class="flex items-center justify-between gap-4 font-medium">
-            Non so quale servizio scegliere: da dove parto?
+            Come faccio a prenotarmi?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
           <p class="mt-4 text-ink-soft text-sm leading-relaxed">
-            Nessun problema, è il motivo per cui partiamo da una mail: raccontaci il tuo progetto e costruiremo insieme il percorso più adatto, su misura per te.
+            Dopo aver scelto il tipo di incontro che più fa per te e quante ore vuoi passare con noi, ti troverai di fronte a un calendario in cui potrai selezionare la data e l'orario a te più comodi. Una volta completata la prenotazione, riceverai un'email di conferma con il link per la videochiamata su Zoom. All'orario stabilito, ti basterà cliccare sul link per collegarti e iniziare il nostro incontro online.
           </p>
         </details>
         <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
           <summary class="flex items-center justify-between gap-4 font-medium">
-            Come si svolgono gli incontri?
+            Come avvengono gli incontri?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
           <p class="mt-4 text-ink-soft text-sm leading-relaxed">
@@ -193,11 +184,11 @@
         </details>
         <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
           <summary class="flex items-center justify-between gap-4 font-medium">
-            Riceverò anche un feedback scritto?
+            Riceverò un feedback scritto?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
           <p class="mt-4 text-ink-soft text-sm leading-relaxed">
-            Sì: prima della nostra call riceverai un documento personalizzato con osservazioni e suggerimenti sul tuo materiale.
+            Sì, riceverai un documento personalizzato con osservazioni e suggerimenti prima della nostra call. Sarà un elemento centrale nella nostra conversazione, così da poter discutere insieme i punti da migliorare.
           </p>
         </details>
       </div>
@@ -208,7 +199,7 @@
   <footer id="contatti" class="border-t border-ink/5 py-14">
     <div class="mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-10">
       <div>
-        <a href="#top" class="inline-block mb-4">
+        <a href="index.html#top" class="inline-block mb-4">
           <img src="images/logo.svg" alt="Stellium" class="h-7 w-auto">
         </a>
         <p class="text-sm text-ink-soft leading-relaxed">Consulenze per le tue storie.<br>Illumina la tua storia.</p>
@@ -223,7 +214,7 @@
         <p class="text-ink font-medium mb-3">Naviga</p>
         <p><a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a></p>
         <p><a href="servizi.html" class="hover:text-corallo transition-colors">Servizi</a></p>
-        <p><a href="#prenota" class="hover:text-corallo transition-colors">Prenota ora</a></p>
+        <p><a href="#domande" class="hover:text-corallo transition-colors">Prenota ora</a></p>
       </div>
     </div>
     <div class="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-ink/5 text-xs text-ink-soft/70">
@@ -246,8 +237,8 @@
       a.addEventListener('click', () => mobileMenu.classList.add('hidden'))
     );
 
-    // Form prenotazione: invia a Formspree senza lasciare la pagina
-    document.getElementById('bookingForm').addEventListener('submit', async (e) => {
+    // Form domande: invia a Formspree senza lasciare la pagina
+    document.getElementById('infoForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const form = e.target;
       const btn = form.querySelector('button');
@@ -261,10 +252,10 @@
         });
         if (!res.ok) throw new Error();
         form.classList.add('hidden');
-        document.getElementById('bookingMsg').classList.remove('hidden');
+        document.getElementById('infoMsg').classList.remove('hidden');
       } catch {
         btn.disabled = false;
-        btn.textContent = 'Invia la richiesta';
+        btn.textContent = 'Invia';
         alert('Ops, qualcosa è andato storto. Scrivici direttamente a stelliumsfl@gmail.com');
       }
     });
