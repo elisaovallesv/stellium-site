@@ -351,10 +351,10 @@
 
     const updateThemeUI = () => {
       const isDark = html.classList.contains('dark');
-      sunIcon.classList.toggle('hidden', isDark);
-      moonIcon.classList.toggle('hidden', !isDark);
-      sunIconMobile.classList.toggle('hidden', isDark);
-      moonIconMobile.classList.toggle('hidden', !isDark);
+      sunIcon.classList.toggle('hidden', !isDark);
+      moonIcon.classList.toggle('hidden', isDark);
+      sunIconMobile.classList.toggle('hidden', !isDark);
+      moonIconMobile.classList.toggle('hidden', isDark);
     };
 
     const setTheme = (dark) => {
