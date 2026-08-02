@@ -39,6 +39,17 @@
     }
     .reveal.visible { opacity: 1; transform: none; }
   </style>
+
+  <!-- TODO: Replace with real Iubenda site ID and policy ID -->
+  <script type="text/javascript">
+    var _iub = _iub || {};
+    _iub.csConfiguration = {
+      "siteId": "YOUR_SITE_ID",
+      "cookiePolicyId": "YOUR_POLICY_ID",
+      "lang": "it"
+    };
+  </script>
+  <script src="https://cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
 <body class="font-body bg-white text-ink antialiased overflow-x-hidden">
 
@@ -171,8 +182,19 @@
         <p><a href="index.html#prenota" class="hover:text-corallo transition-colors">Prenota ora</a></p>
       </div>
     </div>
-    <div class="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-ink/5 text-xs text-ink-soft/70">
-      © <span id="year"></span> Stellium Agency. Tutti i diritti riservati.
+    <div class="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-ink/5 text-xs text-ink-soft/70 flex items-center justify-between">
+      <span>© <span id="year"></span> Stellium Agency. Tutti i diritti riservati.</span>
+      <!-- TODO: point to real Iubenda-hosted policy pages -->
+      <div class="space-x-4">
+        <a href="#" class="hover:text-corallo transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-corallo transition-colors">Cookie Policy</a>
+      </div>
+    </div>
+
+    <!-- TODO: Replace YOUR_BUSINESS_ID with real Trustpilot Business Unit ID -->
+    <div class="mx-auto max-w-6xl px-6 mt-6 pt-6 border-t border-ink/5">
+      <div class="trustpilot-widget" data-locale="it_IT" data-template-id="5613dde6962a150001b68100" data-businessunit-id="TODO-TRUSTPILOT-BUSINESS-ID" data-style-height="52px" data-style-width="100%"></div>
+      <script src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.js" async></script>
     </div>
   </footer>
 
