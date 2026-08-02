@@ -15,12 +15,15 @@
       theme: {
         extend: {
           colors: {
-            ink:     { DEFAULT: '#2B2559', soft: '#57517F' },
-            viola:   { DEFAULT: '#58539F', light: '#8B87C4', pale: '#F1F0F8' },
-            corallo: { DEFAULT: '#EB5B4B', light: '#F0796B', pale: '#FDEEEC' },
-            rosa:    { DEFAULT: '#e889b7' },
-            giallo:  { DEFAULT: '#f1b709' },
-            blu:     { DEFAULT: '#63adf2' }
+            ink:     { DEFAULT: '#2B2559', soft: '#57517F', dark: '#F5F3F0', 'soft-dark': '#C9BFB3' },
+            viola:   { DEFAULT: '#58539F', light: '#8B87C4', pale: '#F1F0F8', dark: '#423B5F', 'pale-dark': '#2D2844' },
+            corallo: { DEFAULT: '#EB5B4B', light: '#F0796B', pale: '#FDEEEC', dark: '#A63B2E', 'pale-dark': '#3D2419' },
+            rosa:    { DEFAULT: '#e889b7', dark: '#A85587' },
+            giallo:  { DEFAULT: '#f1b709', dark: '#B58A07' },
+            blu:     { DEFAULT: '#63adf2', dark: '#2E5CAD' },
+            bgdark:  '#1A1423',
+            carddark: '#2B2344',
+            borderdark: '#3D3350'
           },
           fontFamily: {
             display: ['Fraunces', 'serif'],
@@ -57,7 +60,7 @@
   </script>
   <script src="https://cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
-<body class="font-body bg-white text-ink antialiased overflow-x-hidden">
+<body class="font-body bg-white dark:bg-bgdark text-ink dark:text-ink-dark antialiased overflow-x-hidden">
 
   <!-- NAVBAR -->
   <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/85 border-b border-ink/5">
@@ -70,7 +73,7 @@
         <a href="servizi.html" class="hover:text-corallo transition-colors">Servizi</a>
         <a href="#prenota" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
       </div>
-      <button id="menuBtn" class="md:hidden p-2 text-ink" aria-label="Apri il menu">
+      <div class="md:hidden flex items-center gap-2"><button id="themeToggleMobile" class="p-2 text-ink dark:text-ink-dark rounded-full hover:bg-viola/10 dark:hover:bg-viola-dark/20 transition-colors" aria-label="Cambia tema"><svg id="sunIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><svg id="moonIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div><button id="menuBtn" class="md:hidden p-2 text-ink" aria-label="Apri il menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <path d="M4 7h16M4 12h16M4 17h16"/>
         </svg>
@@ -299,6 +302,43 @@
     // Back button: always scroll to top
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     window.addEventListener('pageshow', () => window.scrollTo(0, 0));
+
+    // Theme toggle
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleMobile = document.getElementById('themeToggleMobile');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+    const sunIconMobile = document.getElementById('sunIconMobile');
+    const moonIconMobile = document.getElementById('moonIconMobile');
+
+    const updateThemeUI = () => {
+      const isDark = html.classList.contains('dark');
+      sunIcon?.classList.toggle('hidden', isDark);
+      moonIcon?.classList.toggle('hidden', !isDark);
+      sunIconMobile?.classList.toggle('hidden', isDark);
+      moonIconMobile?.classList.toggle('hidden', !isDark);
+    };
+
+    const setTheme = (dark) => {
+      if (dark) {
+        html.classList.add('dark');
+        localStorage.theme = 'dark';
+      } else {
+        html.classList.remove('dark');
+        localStorage.theme = 'light';
+      }
+      updateThemeUI();
+    };
+
+    const toggleTheme = () => setTheme(!html.classList.contains('dark'));
+    themeToggle?.addEventListener('click', toggleTheme);
+    themeToggleMobile?.addEventListener('click', toggleTheme);
+
+    const stored = localStorage.theme;
+    if (stored) setTheme(stored === 'dark');
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) html.classList.add('dark');
+    updateThemeUI();
 
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
