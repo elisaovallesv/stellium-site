@@ -49,6 +49,22 @@
     details.faq summary::-webkit-details-marker { display: none; }
     details.faq[open] .faq-icon { transform: rotate(45deg); }
     .faq-icon { transition: transform .25s ease; }
+
+    .storia-stars { position: relative; display: inline-block; }
+    .storia-star {
+      position: absolute;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      pointer-events: none;
+    }
+    .storia-star:nth-child(1) { top: -12px; left: -8px; transition-delay: 0.05s; }
+    .storia-star:nth-child(2) { top: -10px; right: -6px; transition-delay: 0.1s; }
+    .storia-star:nth-child(3) { bottom: 2px; right: -10px; transition-delay: 0.15s; }
+    .storia-stars:hover .storia-star {
+      opacity: 1;
+      transform: scale(1);
+    }
   </style>
 </head>
 <body class="font-body bg-white text-ink antialiased overflow-x-hidden">
@@ -82,7 +98,12 @@
     <div class="mx-auto max-w-4xl px-6 text-center">
       <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-5">Consulenze per la tua creatività</p>
       <h1 class="font-display text-5xl md:text-7xl font-semibold leading-[1.02]">
-        Illumina la tua <span class="text-viola">storia</span>
+        Illumina la tua <span class="storia-stars text-viola">
+          <svg class="storia-star" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.4 4.8h5.2l-4.2 3.2 1.6 4.8-4-3.2-4 3.2 1.6-4.8-4.2-3.2h5.2z" fill="#EB5B4B"/></svg>
+          <svg class="storia-star" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.4 4.8h5.2l-4.2 3.2 1.6 4.8-4-3.2-4 3.2 1.6-4.8-4.2-3.2h5.2z" fill="#58539F"/></svg>
+          <svg class="storia-star" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.4 4.8h5.2l-4.2 3.2 1.6 4.8-4-3.2-4 3.2 1.6-4.8-4.2-3.2h5.2z" fill="#f1b709"/></svg>
+          storia
+        </span>
       </h1>
       <p class="mt-6 text-lg text-ink-soft max-w-xl mx-auto leading-relaxed">
         Siamo appassionati di narrazione. I nostri servizi sono pensati per supportare autrici e autori in ogni fase del loro percorso creativo.
@@ -92,7 +113,7 @@
         <a href="#prenota" class="rounded-full border-2 border-viola px-7 py-3 font-medium text-viola hover:bg-viola hover:text-white transition-colors">Prenota ora</a>
       </div>
     </div>
-    <div class="mt-10 drift">
+    <div class="mt-4 drift relative -mb-12">
       <img src="images/hero.png" alt="Illustrazione Stellium: un viaggio nello spazio delle storie" class="w-full max-w-none">
     </div>
   </section>
@@ -107,7 +128,7 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-viola/10 transition-all duration-300">
+        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-xl hover:shadow-rosa/25 transition-all duration-300">
           <img src="images/icon-story.svg" alt="" aria-hidden="true" class="w-14 h-14 mb-6">
           <h3 class="font-display text-2xl font-semibold mb-3">Story Consulting</h3>
           <p class="text-ink-soft leading-relaxed mb-6">
@@ -119,7 +140,7 @@
           </a>
         </article>
 
-        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-corallo/10 transition-all duration-300">
+        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-xl hover:shadow-giallo/25 transition-all duration-300">
           <img src="images/icon-coach.svg" alt="" aria-hidden="true" class="w-14 h-14 mb-6">
           <h3 class="font-display text-2xl font-semibold mb-3">Writing Coach</h3>
           <p class="text-ink-soft leading-relaxed mb-6">
@@ -131,7 +152,7 @@
           </a>
         </article>
 
-        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-viola/10 transition-all duration-300">
+        <article class="reveal group rounded-3xl bg-white p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-xl hover:shadow-blu/25 transition-all duration-300">
           <img src="images/icon-editing.svg" alt="" aria-hidden="true" class="w-14 h-14 mb-6">
           <h3 class="font-display text-2xl font-semibold mb-3">Editing</h3>
           <p class="text-ink-soft leading-relaxed mb-6">
