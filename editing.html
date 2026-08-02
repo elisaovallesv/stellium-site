@@ -63,23 +63,23 @@
 <body class="font-body bg-white dark:bg-bgdark text-ink dark:text-ink-dark antialiased overflow-x-hidden">
 
   <!-- NAVBAR -->
-  <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/85 border-b border-ink/5">
+  <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-carddark/90 border-b border-ink/5 dark:border-borderdark">
     <nav class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
       <a href="index.html#top" class="flex items-center">
         <img src="images/logo.svg" alt="Stellium" class="h-8 w-auto">
       </a>
-      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-ink-soft">
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-ink-soft dark:text-ink-soft-dark">
         <a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a>
         <a href="servizi.html" class="hover:text-corallo transition-colors">Servizi</a>
         <a href="#prenota" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
       </div>
-      <div class="md:hidden flex items-center gap-2"><button id="themeToggleMobile" class="p-2 text-ink dark:text-ink-dark rounded-full hover:bg-viola/10 dark:hover:bg-viola-dark/20 transition-colors" aria-label="Cambia tema"><svg id="sunIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><svg id="moonIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div><button id="menuBtn" class="md:hidden p-2 text-ink" aria-label="Apri il menu">
+      <div class="md:hidden flex items-center gap-2"><button id="themeToggleMobile" class="p-2 text-ink dark:text-ink-dark rounded-full hover:bg-viola/10 dark:hover:bg-viola-dark/20 transition-colors" aria-label="Cambia tema"><svg id="sunIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><svg id="moonIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div><button id="menuBtn" class="md:hidden p-2 text-ink dark:text-ink-dark" aria-label="Apri il menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <path d="M4 7h16M4 12h16M4 17h16"/>
         </svg>
       </button>
     </nav>
-    <div id="mobileMenu" class="hidden md:hidden border-t border-ink/5 bg-white px-6 py-4 flex flex-col gap-4 text-ink-soft font-medium">
+    <div id="mobileMenu" class="hidden md:hidden border-t border-ink/5 dark:border-borderdark bg-white dark:bg-carddark px-6 py-4 flex flex-col gap-4 text-ink-soft dark:text-ink-soft-dark font-medium">
       <a href="chi-siamo.html" class="hover:text-corallo">Chi siamo</a>
       <a href="servizi.html" class="hover:text-corallo">Servizi</a>
       <a href="#prenota" class="hover:text-corallo">Prenota ora</a>
@@ -89,13 +89,13 @@
   <!-- HERO -->
   <section id="top" class="relative pt-40 pb-24 bg-white bg-contain bg-no-repeat" style="background-image: url('images/hero-editing.png'); background-position: center 65%;">
     <div class="mx-auto max-w-6xl px-6">
-      <div class="reveal bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-14 shadow-lg text-center max-w-xl">
+      <div class="reveal bg-white/90 dark:bg-carddark/80 backdrop-blur-sm rounded-3xl p-8 md:p-14 shadow-lg text-center max-w-xl">
         <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Servizi</p>
         <h1 class="font-display text-5xl font-semibold leading-[1.05] mb-6">Editing</h1>
-        <p class="text-lg text-ink-soft leading-relaxed">
+        <p class="text-lg text-ink-soft dark:text-ink-soft-dark leading-relaxed">
           Un lavoro accurato sulla tua storia per renderla impeccabile sotto ogni aspetto. Rielaboreremo il tuo testo e te lo presenteremo, illustrandoti modifiche e correzioni, così da confrontarci su ogni passaggio.
         </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium text-ink-soft">
+        <div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium text-ink-soft dark:text-ink-soft-dark">
           <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blu"></span>Feedback personalizzato in PDF per la tua storia</span>
           <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blu"></span>Interventi di macro e micro editing sul testo</span>
           <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blu"></span>Canale di comunicazione sempre aperto</span>
@@ -112,7 +112,7 @@
     <div class="mx-auto max-w-3xl px-6 reveal">
       <p class="text-ink tracking-[0.25em] uppercase text-xs font-semibold mb-4">Come funziona</p>
       <h2 class="font-display text-3xl font-semibold leading-tight mb-6">Per dare attenzione a ogni minimo dettaglio.</h2>
-      <div class="space-y-5 text-ink-soft leading-relaxed">
+      <div class="space-y-5 text-ink-soft dark:text-ink-soft-dark leading-relaxed">
         <p>
           L'editing non è solo un processo di correzione, ma un'opportunità per affinare e potenziare ogni aspetto della tua narrazione.
         </p>
@@ -138,7 +138,7 @@
         <div class="flex-1">
           <p class="text-viola tracking-[0.2em] uppercase text-xs font-semibold mb-2">Editing</p>
           <h3 class="font-display text-2xl font-semibold mb-3">Su Misura</h3>
-          <p class="text-ink-soft leading-relaxed">
+          <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed">
             Valutiamo un testo in base alla sua lunghezza. Per ricevere un preventivo, indicaci numero di cartelle e stato di avanzamento (completo, a metà, ecc...).
           </p>
         </div>
@@ -162,21 +162,21 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <article class="reveal rounded-3xl bg-white p-7">
+        <article class="reveal rounded-3xl bg-white dark:bg-carddark p-7">
           <h3 class="font-display text-xl font-semibold mb-3">Distacco emotivo</h3>
-          <p class="text-ink-soft leading-relaxed text-sm">
+          <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm">
             Affezionarsi troppo a frasi, eventi o dialoghi ci rende meno oggettivi sulla loro ragione d'esistere. Un editor ti aiuterà a capire se qualcosa è necessario oppure no.
           </p>
         </article>
-        <article class="reveal rounded-3xl bg-white p-7">
+        <article class="reveal rounded-3xl bg-white dark:bg-carddark p-7">
           <h3 class="font-display text-xl font-semibold mb-3">Conoscere il tuo stile</h3>
-          <p class="text-ink-soft leading-relaxed text-sm">
+          <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm">
             Attraverso la correzione e la gestione di alcuni "tic" da scrittore, comprenderai meglio il tuo stile di scrittura e sarai in grado di usarlo in modo più consapevole.
           </p>
         </article>
-        <article class="reveal rounded-3xl bg-white p-7">
+        <article class="reveal rounded-3xl bg-white dark:bg-carddark p-7">
           <h3 class="font-display text-xl font-semibold mb-3">Un testo più solido</h3>
-          <p class="text-ink-soft leading-relaxed text-sm">
+          <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm">
             Imparerai a preparare il testo dal punto di vista formale, rendendolo pronto per essere presentato a editori, agenzie letterarie, concorsi o self-publishing.
           </p>
         </article>
@@ -189,20 +189,20 @@
     <div class="mx-auto max-w-2xl px-6 text-center reveal">
       <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Prenota</p>
       <h2 class="font-display text-4xl font-semibold">Prenota ora la tua sessione!</h2>
-      <p class="mt-4 text-ink-soft">
+      <p class="mt-4 text-ink-soft dark:text-ink-soft-dark">
         Inviaci una mail con tutti i dettagli del tuo testo e ti risponderemo per fornirti un preventivo e organizzare insieme la tua sessione.
       </p>
 
       <form id="bookingForm" class="mt-9 grid sm:grid-cols-2 gap-4 text-left">
         <input type="text" name="nome" required placeholder="Nome"
-               class="rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+               class="rounded-xl bg-viola-pale/60 dark:bg-carddark border border-ink/10 dark:border-borderdark px-5 py-3.5 placeholder-ink/40 dark:placeholder-ink-soft-dark focus:outline-none focus:border-viola transition-colors">
         <input type="text" name="cognome" required placeholder="Cognome"
-               class="rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+               class="rounded-xl bg-viola-pale/60 dark:bg-carddark border border-ink/10 dark:border-borderdark px-5 py-3.5 placeholder-ink/40 dark:placeholder-ink-soft-dark focus:outline-none focus:border-viola transition-colors">
         <input type="email" name="email" required placeholder="Email"
-               class="sm:col-span-2 rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+               class="sm:col-span-2 rounded-xl bg-viola-pale/60 dark:bg-carddark border border-ink/10 dark:border-borderdark px-5 py-3.5 placeholder-ink/40 dark:placeholder-ink-soft-dark focus:outline-none focus:border-viola transition-colors">
         <input type="hidden" name="servizio" value="Editing">
         <textarea name="messaggio" required rows="5" placeholder="Scrivici il tuo messaggio: raccontaci a che punto sei e di cosa hai bisogno"
-               class="sm:col-span-2 rounded-xl bg-viola-pale/60 border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors resize-y"></textarea>
+               class="sm:col-span-2 rounded-xl bg-viola-pale/60 dark:bg-carddark border border-ink/10 dark:border-borderdark px-5 py-3.5 placeholder-ink/40 dark:placeholder-ink-soft-dark focus:outline-none focus:border-viola transition-colors resize-y"></textarea>
         <button type="submit"
                 class="sm:col-span-2 rounded-xl bg-corallo px-7 py-3.5 font-medium text-white hover:bg-corallo-light transition-colors">
           Invia la richiesta
@@ -212,48 +212,48 @@
 
       <!-- FAQ -->
       <div class="mt-16 space-y-4 text-left">
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+        <details class="faq rounded-2xl bg-viola-pale/60 dark:bg-viola-dark/20 border border-ink/5 dark:border-borderdark">
           <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Come funziona il servizio di Editing?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft dark:text-ink-soft-dark text-sm leading-relaxed">
             Dopo aver ricevuto il tuo manoscritto, lavoreremo per affinare ogni dettaglio, dalla struttura delle frasi allo sviluppo complessivo della storia. Ti invieremo un documento completo di tutte le correzioni e le osservazioni, per poterti orientare nel modo più comodo quando tornerai sulle pagine.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+        <details class="faq rounded-2xl bg-viola-pale/60 dark:bg-viola-dark/20 border border-ink/5 dark:border-borderdark">
           <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Il servizio si concentrerà solo sulla grammatica?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft dark:text-ink-soft-dark text-sm leading-relaxed">
             No, l'editing va ben oltre la correzione formale. Ci occupiamo di rendere la narrazione più fluida, di rafforzare i personaggi e i dialoghi, e di affinare la coerenza della trama, per valorizzare al massimo il tuo testo.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+        <details class="faq rounded-2xl bg-viola-pale/60 dark:bg-viola-dark/20 border border-ink/5 dark:border-borderdark">
           <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Posso inviare un testo completo per un Editing?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft dark:text-ink-soft-dark text-sm leading-relaxed">
             Sì, puoi inviarci sia un testo completo che un manoscritto ancora in fase di scrittura.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+        <details class="faq rounded-2xl bg-viola-pale/60 dark:bg-viola-dark/20 border border-ink/5 dark:border-borderdark">
           <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Quanto tempo ci vorrà per completare un Editing?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft dark:text-ink-soft-dark text-sm leading-relaxed">
             Il tempo necessario dipende dalla lunghezza del tuo manoscritto. Generalmente, per testi di dimensioni più contenute l'editing richiede meno tempo, mentre per elaborati più lunghi potrebbe richiedere più giorni. Non temere: dopo aver ricevuto il tuo testo, ti forniremo una stima più precisa sulla tempistica!
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+        <details class="faq rounded-2xl bg-viola-pale/60 dark:bg-viola-dark/20 border border-ink/5 dark:border-borderdark">
           <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             È possibile cancellare o spostare una sessione?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft dark:text-ink-soft-dark text-sm leading-relaxed">
             Sì, puoi contattarci per spostare o cancellare una sessione di Editing. Per garantire una gestione ottimale del nostro tempo e del tuo, ti chiediamo di darci un preavviso di almeno 48 ore.
           </p>
         </details>
@@ -262,27 +262,27 @@
   </section>
 
   <!-- FOOTER / CONTATTI -->
-  <footer id="contatti" class="border-t border-ink/5 py-14">
+  <footer id="contatti" class="border-t border-ink/5 dark:border-borderdark py-14">
     <div class="mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-10">
       <div>
         <a href="index.html#top" class="inline-block mb-4">
           <img src="images/logo.svg" alt="Stellium" class="h-7 w-auto">
         </a>
-        <p class="text-sm text-ink-soft leading-relaxed">Illumina la tua storia.</p>
+        <p class="text-sm text-ink-soft dark:text-ink-soft-dark leading-relaxed">Illumina la tua storia.</p>
       </div>
-      <div class="text-sm text-ink-soft space-y-2">
+      <div class="text-sm text-ink-soft dark:text-ink-soft-dark space-y-2">
         <p class="text-ink font-medium mb-3">Contatti</p>
         <p>P.IVA 09035550723</p>
         <p><a href="mailto:stelliumsfl@gmail.com" class="hover:text-corallo transition-colors">stelliumsfl@gmail.com</a></p>
       </div>
-      <div class="text-sm text-ink-soft space-y-2">
+      <div class="text-sm text-ink-soft dark:text-ink-soft-dark space-y-2">
         <p class="text-ink font-medium mb-3">Naviga</p>
         <p><a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a></p>
         <p><a href="servizi.html" class="hover:text-corallo transition-colors">Servizi</a></p>
         <p><a href="#prenota" class="hover:text-corallo transition-colors">Prenota ora</a></p>
       </div>
     </div>
-    <div class="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-ink/5 text-xs text-ink-soft/70 flex items-center justify-between">
+    <div class="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-ink/5 dark:border-borderdark text-xs text-ink-soft dark:text-ink-soft-dark/70 flex items-center justify-between">
       <span>© <span id="year"></span> Stellium Agency. Tutti i diritti riservati.</span>
       <!-- TODO: point to real Iubenda-hosted policy pages -->
       <div class="space-x-4">
@@ -292,7 +292,7 @@
     </div>
 
     <!-- TODO: Replace YOUR_BUSINESS_ID with real Trustpilot Business Unit ID -->
-    <div class="mx-auto max-w-6xl px-6 mt-6 pt-6 border-t border-ink/5">
+    <div class="mx-auto max-w-6xl px-6 mt-6 pt-6 border-t border-ink/5 dark:border-borderdark">
       <div class="trustpilot-widget" data-locale="it_IT" data-template-id="5613dde6962a150001b68100" data-businessunit-id="TODO-TRUSTPILOT-BUSINESS-ID" data-style-height="52px" data-style-width="100%"></div>
       <script src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.js" async></script>
     </div>

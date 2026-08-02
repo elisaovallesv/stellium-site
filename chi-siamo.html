@@ -58,12 +58,12 @@
 <body class="font-body bg-white dark:bg-bgdark text-ink dark:text-ink-dark antialiased overflow-x-hidden transition-colors">
 
   <!-- NAVBAR -->
-  <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/85 border-b border-ink/5">
+  <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-carddark/90 border-b border-ink/5 dark:border-borderdark">
     <nav class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
       <a href="index.html#top" class="flex items-center">
         <img src="images/logo.svg" alt="Stellium" class="h-8 w-auto">
       </a>
-      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-ink-soft">
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-ink-soft dark:text-ink-soft-dark">
         <a href="chi-siamo.html" class="text-corallo transition-colors">Chi siamo</a>
         <a href="servizi.html" class="hover:text-corallo transition-colors">Servizi</a>
         <a href="index.html#prenota" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
@@ -77,13 +77,13 @@
           <svg id="sunIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           <svg id="moonIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
-        <button id="menuBtn" class="p-2 text-ink" aria-label="Apri il menu">
+        <button id="menuBtn" class="p-2 text-ink dark:text-ink-dark" aria-label="Apri il menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <path d="M4 7h16M4 12h16M4 17h16"/>
         </svg>
       </button>
     </nav>
-    <div id="mobileMenu" class="hidden md:hidden border-t border-ink/5 bg-white px-6 py-4 flex flex-col gap-4 text-ink-soft font-medium">
+    <div id="mobileMenu" class="hidden md:hidden border-t border-ink/5 dark:border-borderdark bg-white dark:bg-carddark px-6 py-4 flex flex-col gap-4 text-ink-soft dark:text-ink-soft-dark font-medium">
       <a href="chi-siamo.html" class="text-corallo">Chi siamo</a>
       <a href="servizi.html" class="hover:text-corallo">Servizi</a>
       <a href="index.html#prenota" class="hover:text-corallo">Prenota ora</a>
@@ -93,10 +93,10 @@
   <!-- CHI SIAMO -->
   <section id="chi-siamo" class="relative pt-40 pb-10 bg-white bg-contain bg-no-repeat" style="background-image: url('images/team-banner.jpg'); background-position: center 65%;">
     <div class="mx-auto max-w-3xl px-6">
-      <div class="reveal bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-14 shadow-lg">
+      <div class="reveal bg-white/90 dark:bg-carddark/80 backdrop-blur-sm rounded-3xl p-8 md:p-14 shadow-lg">
         <p class="text-viola tracking-[0.25em] uppercase text-xs font-semibold mb-4">Chi siamo</p>
         <h1 class="font-display text-4xl font-semibold leading-tight mb-6">Un'orbita che parte da lontano</h1>
-        <div class="space-y-5 text-ink-soft leading-relaxed">
+        <div class="space-y-5 text-ink-soft dark:text-ink-soft-dark leading-relaxed">
           <p>
             Siamo un gruppo di professionisti, legati da un'amicizia nata durante la nostra formazione nel mondo della narrazione. La nostra missione è affiancare gli autori con un supporto personalizzato alla scrittura e allo storytelling, fondato su una solida esperienza nel settore editoriale.
           </p>
@@ -110,15 +110,15 @@
     <div class="mx-auto max-w-6xl px-6">
       <div class="max-w-xl mb-6 reveal">
         <h2 class="font-display text-4xl font-semibold leading-tight">Incontra il team</h2>
-        <p class="mt-4 text-ink-soft">Vuoi saperne di più su di noi? Scopri chi siamo qui sotto.</p>
+        <p class="mt-4 text-ink-soft dark:text-ink-soft-dark">Vuoi saperne di più su di noi? Scopri chi siamo qui sotto.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <article class="reveal group rounded-3xl bg-white border border-ink/10 overflow-hidden hover:border-rosa/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-rosa/10 transition-all duration-300">
+        <article class="reveal group rounded-3xl bg-white dark:bg-carddark border border-ink/10 dark:border-borderdark overflow-hidden hover:border-rosa/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-rosa/10 transition-all duration-300">
           <img src="images/team-jacopo.jpg" alt="Jacopo Milani" class="w-full aspect-[4/5] object-cover">
           <div class="p-7">
             <h3 class="font-display text-2xl font-semibold mb-2">Jacopo Milani</h3>
-            <p class="text-ink-soft leading-relaxed text-sm">
+            <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm">
               Autore del romanzo "Questo sangue masticato" e scout letterario. Ha lavorato come tutor didattico alla Scuola Holden e collaborato con varie realtà editoriali.
             </p>
           </div>
@@ -128,7 +128,7 @@
           <img src="images/team-francesco.jpg" alt="Francesco Aloia" class="w-full aspect-[4/5] object-cover">
           <div class="p-7">
             <h3 class="font-display text-2xl font-semibold mb-2">Francesco Aloia</h3>
-            <p class="text-ink-soft leading-relaxed text-sm">
+            <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm">
               Autore, editor e story consultant formato alla Scuola Holden, vincitore di Corto86 al Premio Mattador. Unisce narrativa e sceneggiatura lavorando su struttura, personaggi e ritmo.
             </p>
           </div>
@@ -138,7 +138,7 @@
           <img src="images/team-fabrizio.jpg" alt="Fabrizio Fusco" class="w-full aspect-[4/5] object-cover">
           <div class="p-7">
             <h3 class="font-display text-2xl font-semibold mb-2">Fabrizio Fusco</h3>
-            <p class="text-ink-soft leading-relaxed text-sm">
+            <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm">
               Fondatore e direttore commerciale, con esperienza nell'industria cinematografica e regista di cortometraggi. Porta in Stellium la visione del racconto per immagini.
             </p>
           </div>
@@ -148,23 +148,23 @@
   </section>
 
   <!-- DOMANDE / CONTATTO -->
-  <section id="domande" class="relative py-24 bg-viola-pale">
+  <section id="domande" class="relative py-24 bg-viola-pale dark:bg-viola-pale-dark">
     <div class="mx-auto max-w-2xl px-6 text-center reveal">
       <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Contattaci</p>
       <h2 class="font-display text-4xl font-semibold">Vuoi sapere qualcosa in più?</h2>
-      <p class="mt-4 text-ink-soft">
+      <p class="mt-4 text-ink-soft dark:text-ink-soft-dark">
         Siamo qui per rispondere a qualsiasi domanda tu abbia su chi siamo e cosa facciamo. Non esitare, facci sapere i tuoi dubbi!
       </p>
 
       <form id="infoForm" class="mt-9 grid sm:grid-cols-2 gap-4 text-left">
         <input type="text" name="nome" required placeholder="Nome"
-               class="rounded-xl bg-white border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+               class="rounded-xl bg-white dark:bg-carddark border border-ink/10 dark:border-borderdark px-5 py-3.5 placeholder-ink/40 dark:placeholder-ink-soft-dark focus:outline-none focus:border-viola transition-colors">
         <input type="text" name="cognome" required placeholder="Cognome"
-               class="rounded-xl bg-white border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+               class="rounded-xl bg-white dark:bg-carddark border border-ink/10 dark:border-borderdark px-5 py-3.5 placeholder-ink/40 dark:placeholder-ink-soft-dark focus:outline-none focus:border-viola transition-colors">
         <input type="email" name="email" required placeholder="Email"
-               class="sm:col-span-2 rounded-xl bg-white border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors">
+               class="sm:col-span-2 rounded-xl bg-white dark:bg-carddark border border-ink/10 dark:border-borderdark px-5 py-3.5 placeholder-ink/40 dark:placeholder-ink-soft-dark focus:outline-none focus:border-viola transition-colors">
         <textarea name="messaggio" required rows="5" placeholder="Scrivi il tuo messaggio"
-               class="sm:col-span-2 rounded-xl bg-white border border-ink/10 px-5 py-3.5 placeholder-ink/40 focus:outline-none focus:border-viola transition-colors resize-y"></textarea>
+               class="sm:col-span-2 rounded-xl bg-white dark:bg-carddark border border-ink/10 dark:border-borderdark px-5 py-3.5 placeholder-ink/40 dark:placeholder-ink-soft-dark focus:outline-none focus:border-viola transition-colors resize-y"></textarea>
         <button type="submit"
                 class="sm:col-span-2 rounded-xl bg-corallo px-7 py-3.5 font-medium text-white hover:bg-corallo-light transition-colors">
           Invia
@@ -175,27 +175,27 @@
   </section>
 
   <!-- FOOTER / CONTATTI -->
-  <footer id="contatti" class="border-t border-ink/5 py-14">
+  <footer id="contatti" class="border-t border-ink/5 dark:border-borderdark py-14">
     <div class="mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-10">
       <div>
         <a href="index.html#top" class="inline-block mb-4">
           <img src="images/logo.svg" alt="Stellium" class="h-7 w-auto">
         </a>
-        <p class="text-sm text-ink-soft leading-relaxed">Illumina la tua storia.</p>
+        <p class="text-sm text-ink-soft dark:text-ink-soft-dark leading-relaxed">Illumina la tua storia.</p>
       </div>
-      <div class="text-sm text-ink-soft space-y-2">
+      <div class="text-sm text-ink-soft dark:text-ink-soft-dark space-y-2">
         <p class="text-ink font-medium mb-3">Contatti</p>
         <p>P.IVA 09035550723</p>
         <p><a href="mailto:stelliumsfl@gmail.com" class="hover:text-corallo transition-colors">stelliumsfl@gmail.com</a></p>
       </div>
-      <div class="text-sm text-ink-soft space-y-2">
+      <div class="text-sm text-ink-soft dark:text-ink-soft-dark space-y-2">
         <p class="text-ink font-medium mb-3">Naviga</p>
         <p><a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a></p>
         <p><a href="servizi.html" class="hover:text-corallo transition-colors">Servizi</a></p>
         <p><a href="index.html#prenota" class="hover:text-corallo transition-colors">Prenota ora</a></p>
       </div>
     </div>
-    <div class="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-ink/5 text-xs text-ink-soft/70 flex items-center justify-between">
+    <div class="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-ink/5 dark:border-borderdark text-xs text-ink-soft dark:text-ink-soft-dark/70 flex items-center justify-between">
       <span>© <span id="year"></span> Stellium Agency. Tutti i diritti riservati.</span>
       <!-- TODO: point to real Iubenda-hosted policy pages -->
       <div class="space-x-4">
@@ -205,7 +205,7 @@
     </div>
 
     <!-- TODO: Replace YOUR_BUSINESS_ID with real Trustpilot Business Unit ID -->
-    <div class="mx-auto max-w-6xl px-6 mt-6 pt-6 border-t border-ink/5">
+    <div class="mx-auto max-w-6xl px-6 mt-6 pt-6 border-t border-ink/5 dark:border-borderdark">
       <div class="trustpilot-widget" data-locale="it_IT" data-template-id="5613dde6962a150001b68100" data-businessunit-id="TODO-TRUSTPILOT-BUSINESS-ID" data-style-height="52px" data-style-width="100%"></div>
       <script src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.js" async></script>
     </div>
