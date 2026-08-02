@@ -336,6 +336,59 @@
   </footer>
 
   <script>
+    // Back button: always scroll to top
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('pageshow', () => window.scrollTo(0, 0));
+
+    // Theme toggle
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleMobile = document.getElementById('themeToggleMobile');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+    const sunIconMobile = document.getElementById('sunIconMobile');
+    const moonIconMobile = document.getElementById('moonIconMobile');
+
+    const updateThemeUI = () => {
+      const isDark = html.classList.contains('dark');
+      sunIcon.classList.toggle('hidden', isDark);
+      moonIcon.classList.toggle('hidden', !isDark);
+      sunIconMobile.classList.toggle('hidden', isDark);
+      moonIconMobile.classList.toggle('hidden', !isDark);
+    };
+
+    const setTheme = (dark) => {
+      if (dark) {
+        html.classList.add('dark');
+        localStorage.theme = 'dark';
+      } else {
+        html.classList.remove('dark');
+        localStorage.theme = 'light';
+      }
+      updateThemeUI();
+    };
+
+    const toggleTheme = () => {
+      setTheme(!html.classList.contains('dark'));
+    };
+
+    themeToggle?.addEventListener('click', toggleTheme);
+    themeToggleMobile?.addEventListener('click', toggleTheme);
+
+    // Load theme from localStorage or system preference
+    const initTheme = () => {
+      const stored = localStorage.theme;
+      if (stored) {
+        setTheme(stored === 'dark');
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.classList.add('dark');
+        updateThemeUI();
+      } else {
+        updateThemeUI();
+      }
+    };
+    initTheme();
+
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
