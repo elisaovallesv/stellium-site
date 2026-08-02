@@ -128,7 +128,7 @@
           </p>
         </div>
         <div class="md:text-right md:flex-none">
-          <p class="font-display text-2xl font-semibold mb-4">Su preventivo</p>
+          <p class="font-display text-2xl font-semibold mb-4">Richiedi un preventivo</p>
           <a href="#prenota" class="inline-flex items-center gap-2 text-corallo font-medium md:justify-end group-hover:gap-3 transition-all">
             Prenota
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -197,48 +197,48 @@
 
       <!-- FAQ -->
       <div class="mt-16 space-y-4 text-left">
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Come funziona il servizio di Editing?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Dopo aver ricevuto il tuo manoscritto, lavoreremo per affinare ogni dettaglio, dalla struttura delle frasi allo sviluppo complessivo della storia. Ti invieremo un documento completo di tutte le correzioni e le osservazioni, per poterti orientare nel modo più comodo quando tornerai sulle pagine.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Il servizio si concentrerà solo sulla grammatica?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             No, l'editing va ben oltre la correzione formale. Ci occupiamo di rendere la narrazione più fluida, di rafforzare i personaggi e i dialoghi, e di affinare la coerenza della trama, per valorizzare al massimo il tuo testo.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Posso inviare un testo completo per un Editing?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Sì, puoi inviarci sia un testo completo che un manoscritto ancora in fase di scrittura.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Quanto tempo ci vorrà per completare un Editing?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Il tempo necessario dipende dalla lunghezza del tuo manoscritto. Generalmente, per testi di dimensioni più contenute l'editing richiede meno tempo, mentre per elaborati più lunghi potrebbe richiedere più giorni. Non temere: dopo aver ricevuto il tuo testo, ti forniremo una stima più precisa sulla tempistica!
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             È possibile cancellare o spostare una sessione?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Sì, puoi contattarci per spostare o cancellare una sessione di Editing. Per garantire una gestione ottimale del nostro tempo e del tuo, ti chiediamo di darci un preavviso di almeno 48 ore.
           </p>
         </details>
@@ -273,6 +273,10 @@
   </footer>
 
   <script>
+    // Back button: always scroll to top
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('pageshow', () => window.scrollTo(0, 0));
+
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });

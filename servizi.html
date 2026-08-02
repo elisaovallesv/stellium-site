@@ -164,30 +164,30 @@
 
       <!-- FAQ -->
       <div class="mt-16 space-y-4 text-left">
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Come faccio a prenotarmi?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Dopo aver scelto il tipo di incontro che più fa per te e quante ore vuoi passare con noi, ti troverai di fronte a un calendario in cui potrai selezionare la data e l'orario a te più comodi. Una volta completata la prenotazione, riceverai un'email di conferma con il link per la videochiamata su Zoom. All'orario stabilito, ti basterà cliccare sul link per collegarti e iniziare il nostro incontro online.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Come avvengono gli incontri?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Dopo il primo scambio di mail definiamo insieme formato, durata e data. Gli incontri si svolgono in videochiamata.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Riceverò un feedback scritto?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Si, riceverai un documento personalizzato con osservazioni e suggerimenti dopo la nostra call. Sarà un elemento centrale per la tua scrittura dopo il nostro incontro, così da poter avere sempre sotto mano tutto quello su cui abbiamo lavorato insieme.
           </p>
         </details>
@@ -222,6 +222,10 @@
   </footer>
 
   <script>
+    // Back button: always scroll to top
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('pageshow', () => window.scrollTo(0, 0));
+
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });

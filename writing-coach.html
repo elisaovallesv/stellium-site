@@ -230,48 +230,48 @@
 
       <!-- FAQ -->
       <div class="mt-16 space-y-4 text-left">
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Come funziona il servizio di Writing Coach?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Durante una videochiamata, lavoreremo insieme per analizzare e migliorare la tua storia. Ti aiuteremo a definire obiettivi chiari e a individuare le aree su cui concentrarti per rafforzare il tuo manoscritto. Al termine dell'incontro, riceverai un feedback personalizzato in PDF con indicazioni pratiche.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Cosa include il feedback personalizzato?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Il documento di feedback contiene le nostre impressioni sul tuo manoscritto, un'analisi approfondita dei punti di forza e delle aree che necessitano di miglioramenti. Ti fornirà un piano chiaro e organizzato per applicare i nostri consigli, aiutandoti a orientarti nel lavoro di revisione e scrittura.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Il Writing Coach mi aiuterà a preparare il manoscritto per la pubblicazione?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Sì, durante le sessioni possiamo concentrarci anche sugli aspetti formali del testo per renderlo pronto da presentare a editori, agenzie letterarie, concorsi, produzioni o per il self-publishing.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             Non ho un manoscritto completo, posso comunque usufruire del servizio?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Certamente! Anzi, partire da un'idea iniziale o da un abbozzo può essere un vantaggio: in questo modo possiamo guidarti passo dopo passo, aiutandoti a costruire la storia con una direzione chiara fin dall'inizio. Lavoreremo insieme per sviluppare ogni aspetto.
           </p>
         </details>
-        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5 px-6 py-5">
-          <summary class="flex items-center justify-between gap-4 font-medium">
+        <details class="faq rounded-2xl bg-viola-pale/60 border border-ink/5">
+          <summary class="flex items-center justify-between gap-4 font-medium px-6 py-5">
             È possibile spostare o cancellare una sessione?
             <span class="faq-icon text-corallo text-2xl leading-none">+</span>
           </summary>
-          <p class="mt-4 text-ink-soft text-sm leading-relaxed">
+          <p class="px-6 pb-5 -mt-2 text-ink-soft text-sm leading-relaxed">
             Sì, puoi contattarci per spostare o cancellare una sessione di Writing Coach. Per garantire una gestione ottimale del nostro tempo e del tuo, ti chiediamo di darci un preavviso di almeno 48 ore.
           </p>
         </details>
@@ -306,6 +306,10 @@
   </footer>
 
   <script>
+    // Back button: always scroll to top
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('pageshow', () => window.scrollTo(0, 0));
+
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
