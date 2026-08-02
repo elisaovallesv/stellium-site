@@ -11,15 +11,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            ink:     { DEFAULT: '#2B2559', soft: '#57517F' },
-            viola:   { DEFAULT: '#58539F', light: '#8B87C4', pale: '#F1F0F8' },
-            corallo: { DEFAULT: '#EB5B4B', light: '#F0796B', pale: '#FDEEEC' },
-            rosa:    { DEFAULT: '#e889b7' },
-            giallo:  { DEFAULT: '#f1b709' },
-            blu:     { DEFAULT: '#63adf2' }
+            ink:     { DEFAULT: '#2B2559', soft: '#57517F', dark: '#F5F3F0', 'soft-dark': '#C9BFB3' },
+            viola:   { DEFAULT: '#58539F', light: '#8B87C4', pale: '#F1F0F8', dark: '#423B5F', 'pale-dark': '#2D2844' },
+            corallo: { DEFAULT: '#EB5B4B', light: '#F0796B', pale: '#FDEEEC', dark: '#A63B2E', 'pale-dark': '#3D2419' },
+            rosa:    { DEFAULT: '#e889b7', dark: '#A85587' },
+            giallo:  { DEFAULT: '#f1b709', dark: '#B58A07' },
+            blu:     { DEFAULT: '#63adf2', dark: '#2E5CAD' },
+            bgdark:  '#1A1423',
+            carddark: '#2B2344',
+            borderdark: '#3D3350'
           },
           fontFamily: {
             display: ['Fraunces', 'serif'],
@@ -51,7 +55,7 @@
   </script>
   <script src="https://cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
-<body class="font-body bg-white text-ink antialiased overflow-x-hidden">
+<body class="font-body bg-white dark:bg-bgdark text-ink dark:text-ink-dark antialiased overflow-x-hidden transition-colors">
 
   <!-- NAVBAR -->
   <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/85 border-b border-ink/5">
