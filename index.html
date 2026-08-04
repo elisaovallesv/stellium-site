@@ -65,7 +65,8 @@
     .storia-star:nth-child(1) { top: -12px; left: -8px; transition-delay: 0.05s; }
     .storia-star:nth-child(2) { top: -10px; right: -6px; transition-delay: 0.1s; }
     .storia-star:nth-child(3) { bottom: 2px; right: -10px; transition-delay: 0.15s; }
-    .storia-stars:hover .storia-star {
+    .storia-stars:hover .storia-star,
+    .storia-stars:active .storia-star {
       opacity: 1;
       transform: scale(1);
     }
@@ -94,17 +95,17 @@
         <a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a>
         <a href="servizi.html" class="hover:text-corallo transition-colors">Servizi</a>
         <a href="#prenota" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
-        <button id="themeToggle" class="p-2 text-ink dark:text-ink-dark rounded-full hover:bg-viola/10 dark:hover:bg-viola-dark/20 transition-colors" aria-label="Cambia tema">
+        <button id="themeToggle" class="p-2.5 text-ink dark:text-ink-dark rounded-full hover:bg-viola/10 dark:hover:bg-viola-dark/20 transition-colors" aria-label="Cambia tema">
           <svg id="sunIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           <svg id="moonIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
       </div>
-      <div class="md:hidden flex items-center gap-2">
-        <button id="themeToggleMobile" class="p-2 text-ink dark:text-ink-dark rounded-full hover:bg-viola/10 dark:hover:bg-viola-dark/20 transition-colors" aria-label="Cambia tema">
+      <div class="md:hidden flex items-center gap-3">
+        <button id="themeToggleMobile" class="p-2.5 text-ink dark:text-ink-dark rounded-full hover:bg-viola/10 dark:hover:bg-viola-dark/20 transition-colors" aria-label="Cambia tema">
           <svg id="sunIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           <svg id="moonIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
-        <button id="menuBtn" class="p-2 text-ink dark:text-ink-dark" aria-label="Apri il menu">
+        <button id="menuBtn" class="p-2.5 text-ink dark:text-ink-dark" aria-label="Apri il menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <path d="M4 7h16M4 12h16M4 17h16"/>
           </svg>
@@ -114,7 +115,7 @@
     <div id="mobileMenu" class="hidden md:hidden border-t border-ink/5 dark:border-borderdark bg-white dark:bg-carddark px-6 py-4 flex flex-col gap-4 text-ink-soft dark:text-ink-soft-dark font-medium">
       <a href="chi-siamo.html" class="hover:text-corallo">Chi siamo</a>
       <a href="servizi.html" class="hover:text-corallo">Servizi</a>
-      <a href="#prenota" class="hover:text-corallo">Prenota ora</a>
+      <a href="#prenota" class="rounded-full bg-corallo px-5 py-2.5 text-white text-center hover:bg-corallo-light transition-colors">Prenota ora</a>
     </div>
   </header>
 
@@ -130,7 +131,7 @@
           storia
         </span>
       </h1>
-      <p class="mt-6 text-lg text-ink-soft dark:text-ink-soft-dark max-w-xl mx-auto leading-relaxed">
+      <p class="mt-6 text-base md:text-lg text-ink-soft dark:text-ink-soft-dark max-w-xl mx-auto leading-relaxed">
         Siamo appassionati di narrazione. I nostri servizi sono pensati per supportare autrici e autori in ogni fase del loro percorso creativo.
       </p>
       <div class="mt-9 flex flex-wrap justify-center gap-4">
@@ -144,11 +145,11 @@
   </section>
 
   <!-- SERVIZI -->
-  <section id="servizi" class="relative py-24 bg-viola-pale dark:bg-viola-pale-dark">
+  <section id="servizi" class="relative py-16 md:py-24 bg-viola-pale dark:bg-viola-pale-dark">
     <div class="mx-auto max-w-6xl px-6">
       <div class="max-w-xl mb-14 reveal">
         <p class="text-viola tracking-[0.25em] uppercase text-xs font-semibold mb-4">Servizi</p>
-        <h2 class="font-display text-4xl font-semibold leading-tight">Tre rotte per la tua storia</h2>
+        <h2 class="font-display text-3xl md:text-4xl font-semibold leading-tight">Tre rotte per la tua storia</h2>
         <p class="mt-4 text-ink-soft dark:text-ink-soft-dark">Ovunque tu sia nel percorso di scrittura, c'è una consulenza pensata per accompagnarti al passo successivo. Ogni percorso è costruito su misura, insieme a te.</p>
       </div>
 
@@ -193,10 +194,10 @@
   </section>
 
   <!-- PRENOTA / CONTATTO -->
-  <section id="prenota" class="relative py-24">
+  <section id="prenota" class="relative py-16 md:py-24">
     <div class="mx-auto max-w-2xl px-6 text-center reveal">
       <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Prenota</p>
-      <h2 class="font-display text-4xl font-semibold">Prenota ora la tua sessione!</h2>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold">Prenota ora la tua sessione!</h2>
       <p class="mt-4 text-ink-soft dark:text-ink-soft-dark">
         Inviaci una mail con tutti i dettagli e noi ti risponderemo al più presto per organizzare insieme la tua sessione.
       </p>
@@ -363,7 +364,7 @@
       btn.disabled = true;
       btn.textContent = 'Invio in corso...';
       try {
-        const res = await fetch('https://formspree.io/f/xqerqqkd', {
+        const res = await fetch('/api/contact', {
           method: 'POST',
           body: new FormData(form),
           headers: { 'Accept': 'application/json' }
