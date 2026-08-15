@@ -260,7 +260,9 @@
   <script>
     // Back button: always scroll to top
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.addEventListener('pageshow', () => window.scrollTo(0, 0));
+    window.addEventListener('pageshow', () => {
+      if (!window.location.hash) window.scrollTo(0, 0);
+    });
 
     // Theme toggle
     const html = document.documentElement;
