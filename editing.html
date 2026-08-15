@@ -35,6 +35,7 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 5rem; }
 
     .reveal {
       opacity: 0;
@@ -306,9 +307,16 @@
   <script>
     // Back button: always scroll to top
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.addEventListener('pageshow', () => {
-      if (!window.location.hash) window.scrollTo(0, 0);
-    });
+    function scrollToHashTarget() {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) target.scrollIntoView({ block: 'start' });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+    window.addEventListener('pageshow', scrollToHashTarget);
+    window.addEventListener('load', scrollToHashTarget);
 
     // Theme toggle
     const html = document.documentElement;

@@ -35,6 +35,7 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 5rem; }
 
     .reveal {
       opacity: 0;
@@ -71,7 +72,7 @@
       <div class="hidden md:flex items-center gap-7 text-sm font-medium text-ink-soft dark:text-ink-soft-dark">
         <a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a>
         <a href="servizi.html" class="text-corallo transition-colors">Servizi</a>
-        <a href="#domande" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
+        <a href="index.html#prenota" class="rounded-full bg-corallo px-5 py-2 text-white hover:bg-corallo-light transition-colors">Prenota ora</a>
         <button id="themeToggle" class="p-2.5 text-ink dark:text-ink-dark rounded-full hover:bg-viola/10 dark:hover:bg-viola-dark/20 transition-colors" aria-label="Cambia tema">
           <svg id="sunIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           <svg id="moonIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -91,7 +92,7 @@
     <div id="mobileMenu" class="hidden md:hidden border-t border-ink/5 dark:border-borderdark bg-white dark:bg-carddark px-6 py-4 flex flex-col gap-4 text-ink-soft dark:text-ink-soft-dark font-medium">
       <a href="chi-siamo.html" class="hover:text-corallo">Chi siamo</a>
       <a href="servizi.html" class="text-corallo">Servizi</a>
-      <a href="#domande" class="rounded-full bg-corallo px-5 py-2.5 text-white text-center hover:bg-corallo-light transition-colors">Prenota ora</a>
+      <a href="index.html#prenota" class="rounded-full bg-corallo px-5 py-2.5 text-white text-center hover:bg-corallo-light transition-colors">Prenota ora</a>
     </div>
   </header>
 
@@ -237,7 +238,7 @@
         <p class="text-ink font-medium mb-3">Naviga</p>
         <p><a href="chi-siamo.html" class="hover:text-corallo transition-colors">Chi siamo</a></p>
         <p><a href="servizi.html" class="hover:text-corallo transition-colors">Servizi</a></p>
-        <p><a href="#domande" class="hover:text-corallo transition-colors">Prenota ora</a></p>
+        <p><a href="index.html#prenota" class="hover:text-corallo transition-colors">Prenota ora</a></p>
       </div>
     </div>
     <div class="mx-auto max-w-6xl px-6 mt-10 pt-6 border-t border-ink/5 dark:border-borderdark text-xs text-ink-soft dark:text-ink-soft-dark/70 flex items-center justify-between">
@@ -260,9 +261,16 @@
   <script>
     // Back button: always scroll to top
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.addEventListener('pageshow', () => {
-      if (!window.location.hash) window.scrollTo(0, 0);
-    });
+    function scrollToHashTarget() {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) target.scrollIntoView({ block: 'start' });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+    window.addEventListener('pageshow', scrollToHashTarget);
+    window.addEventListener('load', scrollToHashTarget);
 
     // Theme toggle
     const html = document.documentElement;
