@@ -99,8 +99,7 @@
   <!-- HERO -->
   <section id="top" class="relative pt-28 md:pt-40 pb-16 md:pb-24 bg-white dark:bg-bgdark md:bg-contain md:bg-no-repeat md:bg-[center_65%] md:bg-[url('images/hero-servizi.png')]">
     <div class="mx-auto max-w-6xl px-6">
-      <img src="images/hero-servizi.png" alt="Illustrazione Servizi Stellium" class="md:hidden w-full max-w-sm mx-auto mb-6">
-      <div class="reveal bg-white/90 dark:bg-carddark/80 backdrop-blur-sm rounded-3xl p-8 md:p-14 shadow-lg max-w-xl">
+      <div class="reveal bg-white/90 dark:bg-carddark/80 bg-[linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)),url('images/hero-servizi.png')] dark:bg-[linear-gradient(rgba(43,35,68,.85),rgba(43,35,68,.85)),url('images/hero-servizi.png')] bg-cover bg-no-repeat bg-[75%_50%] backdrop-blur-sm rounded-3xl p-8 md:p-14 shadow-lg max-w-xl md:bg-none">
         <p class="text-corallo tracking-[0.25em] uppercase text-xs font-semibold mb-4">Servizi</p>
         <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.05] mb-6">Tre rotte per la tua storia</h1>
         <div class="space-y-5 text-ink-soft dark:text-ink-soft-dark leading-relaxed">
@@ -123,7 +122,7 @@
         <h2 class="font-display text-3xl md:text-4xl font-semibold leading-tight">Scegli il tipo di supporto di cui hai bisogno!</h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="hidden md:grid md:grid-cols-3 gap-6">
         <article class="reveal group rounded-3xl bg-white dark:bg-carddark p-8 flex flex-col h-full hover:-translate-y-1 hover:shadow-xl hover:shadow-rosa/25 transition-all duration-300">
           <img src="images/icon-story.svg" alt="" aria-hidden="true" class="w-14 h-14 mb-6">
           <h3 class="font-display text-2xl font-semibold mb-3">Story Consulting</h3>
@@ -159,6 +158,57 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </article>
+      </div>
+
+      <div class="md:hidden reveal rounded-3xl bg-white dark:bg-carddark shadow-lg divide-y divide-ink/5 dark:divide-borderdark overflow-hidden">
+        <details class="faq group">
+          <summary class="flex items-center gap-4 px-6 py-5 cursor-pointer">
+            <img src="images/icon-story.svg" alt="" aria-hidden="true" class="w-10 h-10 flex-shrink-0">
+            <span class="font-display text-lg font-semibold flex-1">Story Consulting</span>
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <div class="px-6 pb-6 -mt-2">
+            <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm mb-4">
+              Hai solo un'idea vaga della tua storia? Lo Story Consulting ti offre l'opportunità di partecipare a un massiccio brainstorming con noi, dove potrai sviluppare idee, chiarire dubbi e individuare la tua strada.
+            </p>
+            <a href="story-consulting.html" class="inline-flex items-center gap-2 text-corallo font-medium text-sm">
+              Scopri di più
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </details>
+        <details class="faq group">
+          <summary class="flex items-center gap-4 px-6 py-5 cursor-pointer">
+            <img src="images/icon-coach.svg" alt="" aria-hidden="true" class="w-10 h-10 flex-shrink-0">
+            <span class="font-display text-lg font-semibold flex-1">Writing Coach</span>
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <div class="px-6 pb-6 -mt-2">
+            <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm mb-4">
+              Hai iniziato a scrivere ma senti la necessità di sapere se la direzione intrapresa è quella giusta? Scegliendo Writing Coach lavorerai a stretto contatto con noi, ricevendo una guida che ti consiglierà sotto ogni aspetto narrativo nella stesura del tuo racconto.
+            </p>
+            <a href="writing-coach.html" class="inline-flex items-center gap-2 text-corallo font-medium text-sm">
+              Scopri di più
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </details>
+        <details class="faq group">
+          <summary class="flex items-center gap-4 px-6 py-5 cursor-pointer">
+            <img src="images/icon-editing.svg" alt="" aria-hidden="true" class="w-10 h-10 flex-shrink-0">
+            <span class="font-display text-lg font-semibold flex-1">Editing</span>
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <div class="px-6 pb-6 -mt-2">
+            <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm mb-4">
+              Hai bisogno di una revisione del tuo testo? Con il servizio di Editing, potrai ricevere feedback dettagliati su trama, sviluppo dei personaggi e stile di scrittura, attraverso correzioni utili a migliorare la tua storia.
+            </p>
+            <a href="editing.html" class="inline-flex items-center gap-2 text-corallo font-medium text-sm">
+              Scopri di più
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </details>
       </div>
     </div>
   </section>
