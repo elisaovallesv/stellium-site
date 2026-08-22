@@ -60,7 +60,7 @@
 
   <!-- NAVBAR -->
   <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-carddark/90 border-b border-ink/5 dark:border-borderdark">
-    <nav class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+    <nav class="mx-auto max-w-6xl pl-6 pr-4 md:px-6 h-16 flex items-center justify-between">
       <a href="index.html#top" class="flex items-center">
         <img src="images/logo.svg" alt="Stellium" class="h-8 w-auto">
       </a>
@@ -78,7 +78,7 @@
           <svg id="sunIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           <svg id="moonIconMobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
-        <button id="menuBtn" class="p-2.5 text-ink dark:text-ink-dark" aria-label="Apri il menu">
+        <button id="menuBtn" class="p-2.5 text-ink dark:text-ink-dark border border-ink/15 dark:border-borderdark rounded-xl" aria-label="Apri il menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <path d="M4 7h16M4 12h16M4 17h16"/>
         </svg>
@@ -114,7 +114,7 @@
         <p class="mt-4 text-ink-soft dark:text-ink-soft-dark">Vuoi saperne di più su di noi? Scopri chi siamo qui sotto.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="hidden md:grid md:grid-cols-3 gap-6">
         <article class="reveal group rounded-3xl bg-white dark:bg-carddark border border-ink/10 dark:border-borderdark overflow-hidden hover:border-rosa/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-rosa/10 transition-all duration-300">
           <img src="images/team-jacopo.jpg" alt="Jacopo Milani" class="w-full aspect-[4/5] object-cover">
           <div class="p-7">
@@ -144,6 +144,45 @@
             </p>
           </div>
         </article>
+      </div>
+
+      <div class="md:hidden reveal rounded-3xl bg-white dark:bg-carddark shadow-lg divide-y divide-ink/5 dark:divide-borderdark overflow-hidden">
+        <details class="faq group">
+          <summary class="flex items-center gap-4 px-6 py-5 cursor-pointer">
+            <span class="font-display text-lg font-semibold flex-1">Jacopo Milani</span>
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <div class="px-6 pb-6 -mt-2">
+            <img src="images/team-jacopo.jpg" alt="Jacopo Milani" class="w-full aspect-[4/5] object-cover rounded-2xl mb-4">
+            <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm">
+              Autore, editor e story consultant formato alla Scuola Holden, vincitore di Corto86 al Premio Mattador. Unisce narrativa e sceneggiatura lavorando su struttura, personaggi e ritmo.
+            </p>
+          </div>
+        </details>
+        <details class="faq group">
+          <summary class="flex items-center gap-4 px-6 py-5 cursor-pointer">
+            <span class="font-display text-lg font-semibold flex-1">Francesco Aloia</span>
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <div class="px-6 pb-6 -mt-2">
+            <img src="images/team-francesco.jpg" alt="Francesco Aloia" class="w-full aspect-[4/5] object-cover rounded-2xl mb-4">
+            <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm">
+              Autore del romanzo "Questo sangue masticato" e scout letterario. Ha lavorato come tutor didattico alla Scuola Holden e collaborato con varie realtà editoriali.
+            </p>
+          </div>
+        </details>
+        <details class="faq group">
+          <summary class="flex items-center gap-4 px-6 py-5 cursor-pointer">
+            <span class="font-display text-lg font-semibold flex-1">Fabrizio Fusco</span>
+            <span class="faq-icon text-corallo text-2xl leading-none">+</span>
+          </summary>
+          <div class="px-6 pb-6 -mt-2">
+            <img src="images/team-fabrizio.jpg" alt="Fabrizio Fusco" class="w-full aspect-[4/5] object-cover rounded-2xl mb-4">
+            <p class="text-ink-soft dark:text-ink-soft-dark leading-relaxed text-sm">
+              Fondatore e direttore commerciale, con esperienza nell'industria cinematografica e regista di cortometraggi. Porta in Stellium la visione del racconto per immagini.
+            </p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
